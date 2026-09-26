@@ -19,13 +19,13 @@ public static class StickerSingletons
     public class StickerRunSingleton() : CustomSingletonModel(HookType.Run)
     {
         // Temporary forcibly set sticker
-        public override Task AfterCardChangedPiles(CardModel card, PileType oldPileType, AbstractModel? clonedBy)
-        {
-            if (card.Pile is not { Type: PileType.Deck }) return Task.CompletedTask;
-        
-            if (!card.TryGetModifier<TestSticker>(out _)) card.AddModifier<TestSticker>();
-        
-            return Task.CompletedTask;
-        }
+        // public override Task AfterCardChangedPiles(CardModel card, PileType oldPileType, AbstractModel? clonedBy)
+        // {
+        //     if (card.Pile is not { Type: PileType.Deck }) return Task.CompletedTask;
+        //
+        //     if (!card.TryGetModifier<TestSticker>(out _)) card.AddModifier<TestSticker>();
+        //
+        //     return Task.CompletedTask;
+        // }
     }
 }
