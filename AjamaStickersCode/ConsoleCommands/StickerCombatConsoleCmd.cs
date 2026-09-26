@@ -51,7 +51,7 @@ public class StickerCombatConsoleCmd : AbstractConsoleCmd
         
         if (card.HasAnySticker())
         {
-            return new CmdResult(success: false, $"The card at index={result} already has a sticker!");
+            return new CmdResult(success: false, $"The card at index={result} already has a Sticker!");
         }
 
         BaseSticker? sticker = (BaseSticker?) ModelDb.AllStickers.FirstOrDefault(s => s.Id.Entry == stickerName)?.MutableClone();
@@ -63,7 +63,7 @@ public class StickerCombatConsoleCmd : AbstractConsoleCmd
         card.AddModifier(sticker);
         NCard.FindOnTable(card)?.Reload();
         
-        return new CmdResult(success: true, $"Applied sticker to '{card.Title}' at index '{result}' in hand.");
+        return new CmdResult(success: true, $"Applied Sticker to '{card.Title}' at index '{result}' in hand.");
     }
     
     public override CompletionResult GetArgumentCompletions(Player? player, string[] args)
