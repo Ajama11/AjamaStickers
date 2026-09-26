@@ -1,4 +1,7 @@
 using BaseLib.Abstracts;
+using BaseLib.Extensions;
+using Godot;
+using MegaCrit.Sts2.Core.Assets;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.Entities.Players;
@@ -12,7 +15,33 @@ public abstract class BaseSticker : CardModifier, ICustomModel
 {
     public virtual bool RequiresCardToBePlayable => true;
     public virtual List<IHoverTip> ExtraHoverTips => [];
+
+    public Texture2D BigIcon
+    {
+        get
+        {
+            string path = $"res://AjamaStickers/images/stickers/{Id.Entry.RemovePrefix().ToLowerInvariant()}.png";
+            const string placeholderPath = "res://AjamaStickers/images/stickers/base_sticker.png";
+            
+            return ResourceLoader.Exists(path) ?
+                PreloadManager.Cache.GetTexture2D(path) :
+                PreloadManager.Cache.GetTexture2D(placeholderPath);
+        }
+    }
     
+    public Texture2D SmallIcon
+    {
+        get
+        {
+            string path = $"res://AjamaStickers/images/stickers/{Id.Entry.RemovePrefix().ToLowerInvariant()}_small.png";
+            const string placeholderPath = "res://AjamaStickers/images/stickers/base_sticker_small.png";
+            
+            return ResourceLoader.Exists(path) ?
+                PreloadManager.Cache.GetTexture2D(path) :
+                PreloadManager.Cache.GetTexture2D(placeholderPath);
+        }
+    }
+
     public virtual bool ExtraConditionalToApply(CardModel card) => true;
     public virtual bool CanSpawn(Player player) => true;
     public virtual void WhenStickerApplied() { }
@@ -43,7 +72,7 @@ public abstract class BaseSticker : CardModifier, ICustomModel
 
     public override void AddTips(List<IHoverTip> tips)
     {
-        tips.Add(new HoverTip(TitleLocString, GetLoc()));
+        tips.Add(new HoverTip(TitleLocString, GetLoc(), SmallIcon));
         tips.AddRange(ExtraHoverTips);
     }
 

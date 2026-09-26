@@ -63,10 +63,6 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="AjamaStickers\images\" />
-    </ItemGroup>
-
-    <ItemGroup>
       <Content Include="cardloc-presets.json" />
     </ItemGroup>
 
