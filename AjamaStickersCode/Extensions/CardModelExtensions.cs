@@ -1,5 +1,7 @@
 using System.Diagnostics.CodeAnalysis;
 using AjamaStickers.AjamaStickersCode.Stickers;
+using BaseLib.Abstracts;
+using BaseLib.Extensions;
 using MegaCrit.Sts2.Core.Models;
 
 namespace AjamaStickers.AjamaStickersCode.Extensions;
@@ -17,6 +19,16 @@ public static class CardModelExtensions
         public bool CanApplySticker(BaseSticker sticker)
         {
             return sticker.CanApplySticker(card);
+        }
+
+        public void ApplySticker<T>() where T : BaseSticker
+        {
+            card.AddModifier<T>();
+        }
+
+        public void ApplySticker(BaseSticker canonicalSticker)
+        {
+            card.AddModifier((CardModifier) canonicalSticker.MutableClone());
         }
     }
 }
