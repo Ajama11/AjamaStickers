@@ -61,7 +61,7 @@ public class StickerCombatConsoleCmd : AbstractConsoleCmd
         }
         
         card.AddModifier(sticker);
-        NCard.FindOnTable(card)?.Reload();
+        NCard.FindOnTable(card)?.UpdateVisuals(PileType.Hand, CardPreviewMode.Normal);
         
         return new CmdResult(success: true, $"Applied Sticker to '{card.Title}' at index '{result}' in hand.");
     }
