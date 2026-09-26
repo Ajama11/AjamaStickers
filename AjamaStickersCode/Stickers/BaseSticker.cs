@@ -13,6 +13,10 @@ public abstract class BaseSticker : CardModifier, ICustomModel
     public virtual bool RequiresCardToBePlayable => true;
     public virtual List<IHoverTip> ExtraHoverTips => [];
     
+    public virtual bool ExtraConditionalToApply(CardModel card) => true;
+    public virtual bool CanSpawn(Player player) => true;
+    public virtual void WhenStickerApplied() { }
+    
     public bool ValuesSetForThisSave { get; set; } = false;
     
     public static bool HasAnySticker(CardModel card) =>
@@ -56,20 +60,5 @@ public abstract class BaseSticker : CardModifier, ICustomModel
         
         if (afterCard != null)
             description = $"{description}\n{afterCard.GetFormattedText()}";
-    }
-
-    public virtual bool ExtraConditionalToApply(CardModel card)
-    {
-        return true;
-    }
-
-    public virtual bool CanSpawn(Player player)
-    {
-        return true;
-    }
-
-    public virtual void WhenStickerApplied()
-    {
-        
     }
 }
