@@ -38,6 +38,10 @@ public static class StickerSingletons
             if (room is not CombatRoom) return false;
             
             rewards.Add(new StickerReward(player));
+            // rewards.Add(new StickerReward(player));
+            // rewards.Add(new StickerReward(player));
+            // rewards.Add(new StickerReward(player));
+            // rewards.Add(new StickerReward(player));
             
             return true;
         }

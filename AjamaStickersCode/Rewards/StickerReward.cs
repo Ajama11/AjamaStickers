@@ -24,8 +24,14 @@ public class StickerReward(Player player) : CustomReward(player)
 
     protected override string IconPath => ImageHelper.GetImagePath("ui/reward_screen/reward_icon_uncommon.png");
     public override LocString Description => new("gameplay_ui", "AJAMASTICKER-STICKER_REWARD");
+    
+    public struct StickeredCardOption
+    {
+        public CardModel Card;
+        public BaseSticker Sticker;
+    }
 
-    public readonly List<CardModel> CardOptions = [];
+    public readonly List<StickeredCardOption> StickeredCardOptions = [];
     public readonly Dictionary<CardModel, CardModel> DeckVersion = [];
     
     public override CreateRewardFromSave<CustomReward> DeserializeMethod => CreateFromSerializable;
@@ -43,7 +49,7 @@ public class StickerReward(Player player) : CustomReward(player)
         };
     }
 
-    public override bool IsPopulated => CardOptions.Count > 0;
+    public override bool IsPopulated => StickeredCardOptions.Count > 0;
     
     public override void Populate()
     {
@@ -52,30 +58,40 @@ public class StickerReward(Player player) : CustomReward(player)
         var starry = ModelDb.Sticker<Starry>();
         var eligibleStarryCards = stickerlessCards.Where(c => c.CanApplySticker(starry)).ToList();
 
-        List<CardModel> allOptions = [];
+        List<StickeredCardOption> allOptions = [];
         
         foreach (var card in eligibleStarryCards)
         {
             var newCard = Player.RunState.CloneCard(card);
+            var possibleStickers = newCard.GetPossibleStickers();
             
-            newCard.AddModifier((CardModifier) starry.MutableClone());
+            BaseSticker? sticker = Player.RunState.Rng.CombatCardSelection.NextItem(possibleStickers);
+            if (sticker == null) continue;
+            
+            newCard.ApplySticker(sticker);
             
             DeckVersion[newCard] = card;
-            allOptions.Add(newCard);
+            allOptions.Add(new StickeredCardOption
+            {
+                Card = newCard,
+                Sticker = sticker
+            });
         }
 
-        CardOptions.AddRange(allOptions.TakeRandom(3, Player.RunState.Rng.CombatCardSelection));
+        StickeredCardOptions.AddRange(allOptions.TakeRandom(3, Player.RunState.Rng.CombatCardSelection));
     }
 
     protected override async Task<bool> OnSelect()
     {
         var selectedCard = await CardSelectCmd.FromChooseACardScreen(
-            new BlockingPlayerChoiceContext(), CardOptions, Player, true);
+            new BlockingPlayerChoiceContext(), 
+            StickeredCardOptions.Select(o => o.Card).ToList(),
+            Player, true);
 
         if (selectedCard == null) return false;
 
-        var starry = ModelDb.Sticker<Starry>();
-        DeckVersion[selectedCard].ApplySticker(starry);
+        var sticker = StickeredCardOptions.First(o => o.Card == selectedCard).Sticker;
+        DeckVersion[selectedCard].ApplySticker(sticker);
         
         return true;
     }

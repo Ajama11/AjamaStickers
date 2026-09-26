@@ -30,5 +30,14 @@ public static class CardModelExtensions
         {
             card.AddModifier((CardModifier) canonicalSticker.MutableClone());
         }
+
+        public List<BaseSticker> GetPossibleStickers()
+        {
+            return ModelDb.AllStickers
+                .Where(s =>
+                    s.CanSpawn(card.Owner) &&
+                    s.CanApplySticker(card))
+                .ToList();
+        }
     }
 }
