@@ -18,6 +18,9 @@ public abstract class BaseSticker : CardModifier, ICustomModel
     public virtual void WhenStickerApplied() { }
     
     public bool ValuesSetForThisSave { get; set; } = false;
+
+    public LocString TitleLocString => GetLoc("title");
+    public string Title => TitleLocString.GetFormattedText();
     
     public static bool HasAnySticker(CardModel card) =>
         Modifiers(card).Any(m => m is BaseSticker);
@@ -40,7 +43,7 @@ public abstract class BaseSticker : CardModifier, ICustomModel
 
     public override void AddTips(List<IHoverTip> tips)
     {
-        tips.Add(new HoverTip(GetLoc("title"), GetLoc()));
+        tips.Add(new HoverTip(TitleLocString, GetLoc()));
         tips.AddRange(ExtraHoverTips);
     }
 

@@ -51,7 +51,7 @@ public class StickerCombatConsoleCmd : AbstractConsoleCmd
         
         if (card.HasAnySticker())
         {
-            return new CmdResult(success: false, $"The card at index={result} already has a Sticker!");
+            return new CmdResult(success: false, $"{card.Title} already has a Sticker!");
         }
 
         BaseSticker? sticker = (BaseSticker?) ModelDb.AllStickers.FirstOrDefault(s => s.Id.Entry == stickerName)?.MutableClone();
@@ -59,11 +59,16 @@ public class StickerCombatConsoleCmd : AbstractConsoleCmd
         {
             return new CmdResult(success: false, "Sticker not found");
         }
+
+        if (!card.CanApplySticker(sticker))
+        {
+            return new CmdResult(success: false, $"{sticker.Title} is incompatible with {card.Title}!");
+        }
         
         card.AddModifier(sticker);
         NCard.FindOnTable(card)?.UpdateVisuals(PileType.Hand, CardPreviewMode.Normal);
         
-        return new CmdResult(success: true, $"Applied Sticker to '{card.Title}' at index '{result}' in hand.");
+        return new CmdResult(success: true, $"Applied {sticker.Title} to '{card.Title}' at index '{result}' in hand.");
     }
     
     public override CompletionResult GetArgumentCompletions(Player? player, string[] args)
