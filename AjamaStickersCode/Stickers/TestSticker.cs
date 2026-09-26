@@ -29,11 +29,6 @@ public class TestSticker : BaseSticker
     {
         if (cardPlay.Card != Owner) return;
 
-        await PlayerCmd.GainStars(1, cardPlay.Player);
-    }
-
-    public override void ModifyDescriptionPost(Creature? target, ref string description)
-    {
-        description = description + "\n[aqua]" + LocString.GetIfExists("static_hover_tips", "COOK.title")?.GetFormattedText() + ".[/aqua]";
+        
     }
 }

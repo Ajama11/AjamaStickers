@@ -1,3 +1,15 @@
 {
-  
+  "AJAMASTICKERS-CUNNING.title": "Cunning",
+  "AJAMASTICKERS-CUNNING.description": "This card gains [gold]Sly[/gold].",
+  "AJAMASTICKERS-ENERGIZE.title": "Energize",
+  "AJAMASTICKERS-ENERGIZE.description": "After playing this card, gain [blue]1[/blue] Energy.",
+  "AJAMASTICKERS-ENERGIZE.afterCard": "[aqua]Gain {Energy:energyIcons()}.[/aqua]",
+  "AJAMASTICKERS-STARRY.title": "Starry",
+  "AJAMASTICKERS-STARRY.description": "After playing this card, gain [blue]1[/blue] Star.",
+  "AJAMASTICKERS-STARRY.afterCard": "[aqua]Gain {Stars:starIcons()}.[/aqua]",
+  "AJAMASTICKERS-LOYAL.title": "Loyal",
+  "AJAMASTICKERS-LOYAL.description": "When this card is played, it returns to your [gold]Hand[/gold] next turn.",
+  "AJAMASTICKERS-LOYAL.afterCard": "[aqua]At the start of your next turn, return this to your [/aqua][gold]Hand[/gold][aqua].[/aqua]",
+  "AJAMASTICKERS-TEST_STICKER.title": "Test",
+  "AJAMASTICKERS-TEST_STICKER.description": "Bottom Text"
 }

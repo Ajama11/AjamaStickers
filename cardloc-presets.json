@@ -1,0 +1,79 @@
+{
+  "localizationBase": "AjamaStickers/localization/eng",
+  "projectId": "Ajamastickers",
+  "presets": [
+    {
+      "id": "sticker",
+      "markers": [
+        "BaseSticker"
+      ],
+      "fields": [
+        {
+          "name": "title",
+          "file": "card_modifiers.json",
+          "optional": false
+        },
+        {
+          "name": "description",
+          "file": "card_modifiers.json",
+          "optional": false
+        },
+        {
+          "name": "afterCard",
+          "file": "card_modifiers.json",
+          "optional": true
+        },
+        {
+          "name": "beforeCard",
+          "file": "card_modifiers.json",
+          "optional": true
+        }
+      ]
+    },
+    {
+      "id": "power",
+      "markers": [
+        "AjamaStickerPower"
+      ],
+      "fields": [
+        {
+          "name": "title",
+          "file": "powers.json",
+          "optional": false
+        },
+        {
+          "name": "description",
+          "file": "powers.json",
+          "optional": false
+        },
+        {
+          "name": "smartDescription",
+          "file": "powers.json",
+          "optional": false
+        },
+        {
+          "name": "selectionScreenPrompt",
+          "file": "powers.json",
+          "optional": true
+        },
+        {
+          "name": "remoteDescription",
+          "file": "powers.json",
+          "optional": true
+        }
+      ]
+    }
+  ],
+  "pinnedColors": [
+    {
+      "tag": "gold"
+    },
+    {
+      "tag": "blue"
+    },
+    {
+      "tag": "aqua"
+    }
+  ],
+  "customTags": []
+}

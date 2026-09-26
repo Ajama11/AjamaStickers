@@ -66,6 +66,10 @@
       <Folder Include="AjamaStickers\images\" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Content Include="cardloc-presets.json" />
+    </ItemGroup>
+
     <Target Name="CheckDependencyPaths">
         <Error
                 Text=" Slay the Spire 2 data not found at path '$(Sts2DataDir)'"

@@ -20,9 +20,4 @@ public class Energize : BaseSticker
 
         await PlayerCmd.GainEnergy(DynamicVars.Energy.BaseValue, cardPlay.Player);
     }
-
-    public override void ModifyDescriptionPost(Creature? target, ref string description)
-    {
-        description = description + "\n[aqua]" + LocString.GetIfExists("static_hover_tips", "ENERGY.title")?.GetFormattedText() + ".[/aqua]";
-    }
 }
