@@ -39,5 +39,10 @@ public static class CardModelExtensions
                     s.CanApplySticker(card))
                 .ToList();
         }
+
+        public BaseSticker? GetCurrentSticker()
+        {
+            return card.GetModifier<BaseSticker>();
+        }
     }
 }

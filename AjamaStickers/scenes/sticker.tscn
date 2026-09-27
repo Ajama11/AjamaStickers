@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://i2yyrfvpwre3"]
+
+[ext_resource type="Texture2D" uid="uid://vg4kkkpmp27t" path="res://AjamaStickers/images/stickers/base_sticker.png" id="1_v1veo"]
+[ext_resource type="Script" path="res://AjamaStickersCode/Nodes/NAjamaSticker.cs" id="2_ssovg"]
+
+[node name="AjamaSticker" type="TextureRect"]
+offset_left = -120.0
+offset_top = -160.0
+offset_right = -56.0
+offset_bottom = -96.0
+pivot_offset = Vector2(32, 32)
+mouse_filter = 2
+texture = ExtResource("1_v1veo")
+expand_mode = 1
+script = ExtResource("2_ssovg")

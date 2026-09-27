@@ -1,3 +1,4 @@
+using System.Runtime.CompilerServices;
 using AjamaStickers.AjamaStickersCode.Rewards;
 using AjamaStickers.AjamaStickersCode.Stickers;
 using BaseLib.Abstracts;
@@ -14,7 +15,19 @@ namespace AjamaStickers.AjamaStickersCode.Singletons;
 
 public static class StickerSingletons
 {
-    public static readonly SavedSpireField<Player, int> Chance = new(() => 10, "AjamaSticker-Chance");
+    public static readonly SavedSpireField<Player, int> Chance =
+        new(() => 10, "AjamaSticker-Chance");
+    
+    public static readonly SavedSpireField<CardModel, int> RandomPlacement =
+        (SavedSpireField<CardModel, int>) new SavedSpireField<CardModel, int>
+                (() => -1, "AjamaSticker-RandomPlacement")
+            .CopyOnClone();
+    
+    public static void SetRandomPlacement(CardModel card)
+    {
+        if (RandomPlacement[card] == -1)
+            RandomPlacement[card] = RuntimeHelpers.GetHashCode(card);
+    }
     
     public class StickerCombatSingleton() : CustomSingletonModel(HookType.Combat)
     {
@@ -23,15 +36,17 @@ public static class StickerSingletons
     
     public class StickerRunSingleton() : CustomSingletonModel(HookType.Run)
     {
-        // Temporary forcibly set sticker
-        // public override Task AfterCardChangedPiles(CardModel card, PileType oldPileType, AbstractModel? clonedBy)
-        // {
-        //     if (card.Pile is not { Type: PileType.Deck }) return Task.CompletedTask;
-        //
-        //     if (!card.TryGetModifier<TestSticker>(out _)) card.AddModifier<TestSticker>();
-        //
-        //     return Task.CompletedTask;
-        // }
+        public override Task AfterCardChangedPiles(CardModel card, PileType oldPileType, AbstractModel? clonedBy)
+        {
+            if (card.Pile is not { Type: PileType.Deck }) return Task.CompletedTask;
+        
+            // Temporary forcibly set sticker
+            // if (!card.TryGetModifier<TestSticker>(out _)) card.AddModifier<TestSticker>();
+
+            SetRandomPlacement(card);
+            
+            return Task.CompletedTask;
+        }
 
         public override bool TryModifyRewards(Player player, List<Reward> rewards, AbstractRoom? room)
         {
