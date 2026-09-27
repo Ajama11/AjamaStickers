@@ -16,6 +16,7 @@ public class Loyal : BaseSticker
     public override bool ExtraConditionalToApply(CardModel card)
     {
         return card.Type != CardType.Power &&
+               !card.Keywords.Contains(CardKeyword.Exhaust) &&
                card is not ThrummingHatchet &&
                card is not Bolas;
     }
