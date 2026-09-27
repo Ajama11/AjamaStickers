@@ -27,6 +27,11 @@
           "name": "beforeCard",
           "file": "card_modifiers.json",
           "optional": true
+        },
+        {
+          "name": "selectionScreenPrompt",
+          "file": "card_modifiers.json",
+          "optional": true
         }
       ]
     },
@@ -64,16 +69,6 @@
       ]
     }
   ],
-  "pinnedColors": [
-    {
-      "tag": "gold"
-    },
-    {
-      "tag": "blue"
-    },
-    {
-      "tag": "aqua"
-    }
-  ],
+  "pinnedColors": [],
   "customTags": []
 }

@@ -21,7 +21,8 @@ public class TestSticker : BaseSticker
         Owner.AddKeyword(CardKeyword.Retain);
         if (Owner.Type != CardType.Power) Owner.AddKeyword(CardKeyword.Exhaust);
         
-        Owner.EnergyCost.AddThisCombat(-1);
+        Owner.EnergyCost.UpgradeBy(-1);
+        Owner.EnergyCost.FinalizeUpgrade();
         Owner.BaseReplayCount += 1;
     }
 

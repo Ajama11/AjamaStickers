@@ -50,6 +50,8 @@ public abstract class BaseSticker : CardModifier, ICustomModel
 
     public LocString TitleLocString => GetLoc("title");
     public string Title => TitleLocString.GetFormattedText();
+
+    public LocString SelectionScreenPrompt => GetLoc("selectionScreenPrompt");
     
     public static bool HasAnySticker(CardModel card) =>
         Modifiers(card).Any(m => m is BaseSticker);

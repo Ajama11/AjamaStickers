@@ -91,10 +91,22 @@ using MegaCrit.Sts2.Core.Localization.DynamicVars;
 namespace $NAMESPACE$;
 
 public class $CLASS$() : BaseSticker {
-    protected override IEnumerable&lt;MegaCrit.Sts2.Core.Localization.DynamicVars.DynamicVar&gt; CanonicalVars =&gt;
+    protected override IEnumerable&lt;DynamicVar&gt; CanonicalVars =&gt;
     [
         $END$
     ];
+
+    public override void WhenStickerApplied()
+    {
+        
+    }
+
+    public override async Task AfterCardPlayed(PlayerChoiceContext choiceContext, CardPlay cardPlay)
+    {
+        if (cardPlay.Card != Owner) return;
+        
+        
+    }
 }</s:String>
 	<s:Boolean x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=B4D0CA86CBDACD42AD544A77CAE9FDEC/@KeyIndexDefined">True</s:Boolean>
 	<s:Boolean x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=B4D0CA86CBDACD42AD544A77CAE9FDEC/Applicability/=File/@EntryIndexedValue">True</s:Boolean>
