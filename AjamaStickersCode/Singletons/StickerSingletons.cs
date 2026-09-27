@@ -48,6 +48,12 @@ public static class StickerSingletons
             return Task.CompletedTask;
         }
 
+        public override Task AfterCardGeneratedForCombat(CardModel card, Player? creator)
+        {
+            SetRandomPlacement(card);
+            return Task.CompletedTask;
+        }
+
         public override bool TryModifyRewards(Player player, List<Reward> rewards, AbstractRoom? room)
         {
             if (room is not CombatRoom) return false;
