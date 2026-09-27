@@ -1,0 +1,20 @@
+using MegaCrit.Sts2.Core.Commands;
+using MegaCrit.Sts2.Core.Entities.Cards;
+using MegaCrit.Sts2.Core.Entities.Creatures;
+using MegaCrit.Sts2.Core.Entities.Players;
+using MegaCrit.Sts2.Core.GameActions.Multiplayer;
+using MegaCrit.Sts2.Core.Localization;
+using MegaCrit.Sts2.Core.Localization.DynamicVars;
+
+namespace AjamaStickers.AjamaStickersCode.Stickers;
+
+public class Opportunity() : BaseSticker
+{
+    public override async Task AfterAutoPostPlayPhaseEntered(PlayerChoiceContext choiceContext, Player player)
+    {
+        if (player != Owner!.Owner) return;
+
+        if (Owner.Pile?.Type == PileType.Hand)
+            await CardCmd.AutoPlay(choiceContext, Owner, null);
+    }
+}

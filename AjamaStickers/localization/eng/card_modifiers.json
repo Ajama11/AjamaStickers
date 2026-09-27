@@ -20,5 +20,11 @@
   "AJAMASTICKERS-FETCH.afterCard": "#[aqua]Put up to !C! card(s) from your [/aqua][gold]Discard Pile[/gold][aqua] into your [/aqua][gold]Hand[/gold][aqua].[/aqua]",
   "AJAMASTICKERS-FETCH.selectionScreenPrompt": "#Choose up to {Amount} card(s) to put into your [gold]Hand[/gold].",
   "AJAMASTICKERS-FRONTLOAD.title": "Frontload",
-  "AJAMASTICKERS-FRONTLOAD.description": "This card gains [gold]Innate[/gold] and [gold]Exhaust[/gold], and costs [blue]1[/blue] less {Energy:energyIcons()}."
+  "AJAMASTICKERS-FRONTLOAD.description": "This card gains [gold]Innate[/gold] and [gold]Exhaust[/gold], and costs [blue]1[/blue] less {Energy:energyIcons()}.",
+  "AJAMASTICKERS-OPPORTUNITY.title": "Opportunity",
+  "AJAMASTICKERS-OPPORTUNITY.description": "At the end of your turn, if this card is in your [gold]Hand[/gold], play it.",
+  "AJAMASTICKERS-OPPORTUNITY.afterCard": "[aqua]At the end of your turn, if this is in your [/aqua][gold]Hand[/gold][aqua], play it.[/aqua]",
+  "AJAMASTICKERS-CONCLUDE.title": "Conclude",
+  "AJAMASTICKERS-CONCLUDE.description": "This card costs {Energy:energyIcons()}.\nAfter this card is played, end your turn.",
+  "AJAMASTICKERS-CONCLUDE.afterCard": "[aqua]End your turn.[/aqua]"
 }
