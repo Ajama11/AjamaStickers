@@ -10,7 +10,7 @@ namespace AjamaStickers.AjamaStickersCode.Stickers;
 
 public class Brace() : BaseSticker
 {
-    protected override IEnumerable<DynamicVar> CanonicalVars =>
+    protected override IEnumerable<DynamicVar> StickerCanonicalVars =>
     [
         new BlockVar(3, BlockProps.card)
     ];

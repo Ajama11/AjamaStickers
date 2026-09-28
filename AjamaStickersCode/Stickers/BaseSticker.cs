@@ -7,6 +7,7 @@ using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.Entities.Players;
 using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization;
+using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models;
 
 namespace AjamaStickers.AjamaStickersCode.Stickers;
@@ -15,6 +16,11 @@ public abstract class BaseSticker : CardModifier, ICustomModel
 {
     public virtual bool RequiresCardToBePlayable => true;
     public virtual List<IHoverTip> ExtraHoverTips => [];
+    protected virtual IEnumerable<DynamicVar> StickerCanonicalVars => [];
+    
+    public virtual bool ExtraConditionalToApply(CardModel card) => true;
+    public virtual bool CanSpawn(Player player) => true;
+    public virtual void WhenStickerApplied() { }
 
     public Texture2D BigIcon
     {
@@ -41,12 +47,21 @@ public abstract class BaseSticker : CardModifier, ICustomModel
                 PreloadManager.Cache.GetTexture2D(placeholderPath);
         }
     }
-
-    public virtual bool ExtraConditionalToApply(CardModel card) => true;
-    public virtual bool CanSpawn(Player player) => true;
-    public virtual void WhenStickerApplied() { }
     
-    public bool ValuesSetForThisSave { get; set; } = false;
+    public bool ValuesSetForThisSave { get; set; }
+
+    public const string ActiveKey = "Active";
+    protected sealed override IEnumerable<DynamicVar> CanonicalVars =>
+    [
+        new BoolVar(ActiveKey, true),
+        ..StickerCanonicalVars
+    ];
+
+    public bool Active
+    {
+        get => ((BoolVar) DynamicVars[ActiveKey]).BoolVal;
+        set => ((BoolVar) DynamicVars[ActiveKey]).BoolVal = value;
+    }
 
     public LocString TitleLocString => GetLoc("title");
     public string Title => TitleLocString.GetFormattedText();
@@ -90,9 +105,27 @@ public abstract class BaseSticker : CardModifier, ICustomModel
             afterCard = GetLoc("afterCard");
 
         if (beforeCard != null)
-            description = $"{beforeCard.GetFormattedText()}\n{description}";
+        {
+            string beforeCardText = beforeCard.GetFormattedText();
+            
+            if (!beforeCard.GetRawText().StartsWith("{Active:"))
+            {
+                beforeCardText = beforeCardText + "\n";
+            }
+            
+            description = beforeCardText + description;
+        }
         
         if (afterCard != null)
-            description = $"{description}\n{afterCard.GetFormattedText()}";
+        {
+            string afterCardText = afterCard.GetFormattedText();
+            
+            if (!afterCard.GetRawText().StartsWith("{Active:"))
+            {
+                afterCardText = "\n" + afterCardText;
+            }
+            
+            description = description + afterCardText;
+        }
     }
 }

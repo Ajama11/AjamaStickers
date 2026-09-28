@@ -15,7 +15,7 @@ public class Frontload() : BaseSticker
          card.EnergyCost.GetWithModifiers(CostModifiers.All) == 0) &&
         !card.EnergyCost.CostsX;
 
-    protected override IEnumerable<DynamicVar> CanonicalVars =>
+    protected override IEnumerable<DynamicVar> StickerCanonicalVars =>
     [
         new EnergyVar(1)
     ];

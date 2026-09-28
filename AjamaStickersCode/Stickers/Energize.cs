@@ -9,7 +9,7 @@ namespace AjamaStickers.AjamaStickersCode.Stickers;
 
 public class Energize : BaseSticker
 {
-    protected override IEnumerable<DynamicVar> CanonicalVars =>
+    protected override IEnumerable<DynamicVar> StickerCanonicalVars =>
     [
         new EnergyVar(1)
     ];

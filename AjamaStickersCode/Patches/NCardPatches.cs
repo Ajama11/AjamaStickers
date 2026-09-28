@@ -21,6 +21,9 @@ public static class NCardPatches
         var nSticker = PreloadManager.Cache.GetScene("res://AjamaStickers/scenes/sticker.tscn")
             .Instantiate<TextureRect>();
         
+        ((ShaderMaterial) nSticker.Material).Shader =
+            PreloadManager.Cache.GetAsset<Shader>("res://shaders/hsv.gdshader");
+        
         __instance.Body.AddChildSafely(nSticker);
         __instance.Body.MoveChildSafely(nSticker, __instance._frame.GetIndex());
     }
@@ -40,6 +43,7 @@ public static class NCardPatches
         BaseSticker sticker = __instance.Model.GetCurrentSticker()!;
 
         int hash = StickerSingletons.RandomPlacement[__instance.Model];
+        ShaderMaterial hsv = (ShaderMaterial) nSticker.Material;
         
         float randomRotation = (hash % 50) - 25f; // -25 to 25
         float randomXPosition = (hash % (120 - 64)) - 120f; // -120 to -64
@@ -48,6 +52,10 @@ public static class NCardPatches
         nSticker.Texture = sticker.BigIcon;
         nSticker.RotationDegrees = randomRotation;
         nSticker.Position = new Vector2(randomXPosition, randomYPosition);
+
+        nSticker.Modulate = sticker.Active ? Colors.White : new Color(1, 1, 1, 0.75f);
+        hsv.SetShaderParameter("s", sticker.Active ? 1 : 0.1);
+        hsv.SetShaderParameter("v", sticker.Active ? 1 : 0.6);
         
         nSticker.Visible = true;
     }

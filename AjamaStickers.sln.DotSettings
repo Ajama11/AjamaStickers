@@ -92,7 +92,7 @@ using MegaCrit.Sts2.Core.Models;
 namespace $NAMESPACE$;
 
 public class $CLASS$() : BaseSticker {
-    protected override IEnumerable&lt;DynamicVar&gt; CanonicalVars =&gt;
+    protected override IEnumerable&lt;DynamicVar&gt; StickerCanonicalVars =&gt;
     [
         $END$
     ];

@@ -11,7 +11,7 @@ namespace AjamaStickers.AjamaStickersCode.Stickers;
 
 public class Fetch() : BaseSticker
 {
-    protected override IEnumerable<DynamicVar> CanonicalVars =>
+    protected override IEnumerable<DynamicVar> StickerCanonicalVars =>
     [
         new CardsVar(1)
     ];

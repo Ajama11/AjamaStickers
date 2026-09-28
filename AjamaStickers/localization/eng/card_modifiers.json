@@ -29,5 +29,8 @@
   "AJAMASTICKERS-CONCLUDE.afterCard": "[aqua]End your turn.[/aqua]",
   "AJAMASTICKERS-CHEMICAL.title": "Chemical",
   "AJAMASTICKERS-CHEMICAL.description": "#This card's X is increased by [blue]!Increase![/blue].",
-  "AJAMASTICKERS-CHEMICAL.beforeCard": "#[aqua]X is increased by !Increase!.[/aqua]"
+  "AJAMASTICKERS-CHEMICAL.beforeCard": "#[aqua]X is increased by !Increase!.[/aqua]",
+  "AJAMASTICKERS-SAPPING.title": "Sapping",
+  "AJAMASTICKERS-SAPPING.description": "#The first time this card is played, ALL enemies lose !StrengthPower! Strength.",
+  "AJAMASTICKERS-SAPPING.afterCard": "#{Active:\n[aqua]The first time this card is played, ALL enemies lose !StrengthPower! [/aqua][gold]Strength[/gold][aqua].[/aqua]|}"
 }

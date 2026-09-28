@@ -16,7 +16,7 @@ public class Conclude() : BaseSticker
         !card.EnergyCost.CostsX &&
         card is not VoidForm;
 
-    protected override IEnumerable<DynamicVar> CanonicalVars =>
+    protected override IEnumerable<DynamicVar> StickerCanonicalVars =>
     [
         new EnergyVar(0)
     ];

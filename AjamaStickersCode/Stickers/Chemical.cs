@@ -20,7 +20,7 @@ public class Chemical() : BaseSticker
 
     private const string Increase = "Increase";
     
-    protected override IEnumerable<DynamicVar> CanonicalVars =>
+    protected override IEnumerable<DynamicVar> StickerCanonicalVars =>
     [
         new IntVar(Increase, 1)
     ];

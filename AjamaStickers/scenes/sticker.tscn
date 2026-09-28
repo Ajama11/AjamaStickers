@@ -1,9 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://i2yyrfvpwre3"]
+[gd_scene load_steps=4 format=3 uid="uid://i2yyrfvpwre3"]
 
 [ext_resource type="Texture2D" uid="uid://vg4kkkpmp27t" path="res://AjamaStickers/images/stickers/base_sticker.png" id="1_v1veo"]
-[ext_resource type="Script" path="res://AjamaStickersCode/Nodes/NAjamaSticker.cs" id="2_ssovg"]
+[ext_resource type="Script" uid="uid://cvrl6xhx7pmke" path="res://AjamaStickersCode/Nodes/NAjamaSticker.cs" id="2_ssovg"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ssovg"]
+resource_local_to_scene = true
 
 [node name="AjamaSticker" type="TextureRect"]
+material = SubResource("ShaderMaterial_ssovg")
 offset_left = -120.0
 offset_top = -160.0
 offset_right = -56.0
