@@ -54,13 +54,10 @@ public class StickerReward(Player player) : CustomReward(player)
     public override void Populate()
     {
         var stickerlessCards = Player.Deck.Cards.Where(c => !c.HasAnySticker()).ToList();
-        
-        var starry = ModelDb.Sticker<Starry>();
-        var eligibleStarryCards = stickerlessCards.Where(c => c.CanApplySticker(starry)).ToList();
 
         List<StickeredCardOption> allOptions = [];
         
-        foreach (var card in eligibleStarryCards)
+        foreach (var card in stickerlessCards)
         {
             var newCard = Player.RunState.CloneCard(card);
             var possibleStickers = newCard.GetPossibleStickers();
@@ -83,6 +80,8 @@ public class StickerReward(Player player) : CustomReward(player)
 
     protected override async Task<bool> OnSelect()
     {
+        if (StickeredCardOptions.Count == 0) return true;
+        
         var selectedCard = await CardSelectCmd.FromChooseACardScreen(
             new BlockingPlayerChoiceContext(), 
             StickeredCardOptions.Select(o => o.Card).ToList(),
