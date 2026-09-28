@@ -32,5 +32,7 @@
   "AJAMASTICKERS-CHEMICAL.beforeCard": "#[aqua]X is increased by !Increase!.[/aqua]",
   "AJAMASTICKERS-SAPPING.title": "Sapping",
   "AJAMASTICKERS-SAPPING.description": "#The first time this card is played, ALL enemies lose !StrengthPower! Strength.",
-  "AJAMASTICKERS-SAPPING.afterCard": "#{Active:\n[aqua]The first time this card is played, ALL enemies lose !StrengthPower! [/aqua][gold]Strength[/gold][aqua].[/aqua]|}"
+  "AJAMASTICKERS-SAPPING.afterCard": "#{Active:\n[aqua]The first time this card is played, ALL enemies lose !StrengthPower! [/aqua][gold]Strength[/gold][aqua].[/aqua]|}",
+  "AJAMASTICKERS-OMAMORI.title": "Omamori",
+  "AJAMASTICKERS-OMAMORI.description": "This card becomes playable for {Energy:energyIcons()} and gains [gold]Exhaust[/gold]."
 }
