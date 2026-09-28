@@ -26,5 +26,8 @@
   "AJAMASTICKERS-OPPORTUNITY.afterCard": "[aqua]At the end of your turn, if this is in your [/aqua][gold]Hand[/gold][aqua], play it.[/aqua]",
   "AJAMASTICKERS-CONCLUDE.title": "Conclude",
   "AJAMASTICKERS-CONCLUDE.description": "This card costs {Energy:energyIcons()}.\nAfter this card is played, end your turn.",
-  "AJAMASTICKERS-CONCLUDE.afterCard": "[aqua]End your turn.[/aqua]"
+  "AJAMASTICKERS-CONCLUDE.afterCard": "[aqua]End your turn.[/aqua]",
+  "AJAMASTICKERS-CHEMICAL.title": "Chemical",
+  "AJAMASTICKERS-CHEMICAL.description": "#This card's X is increased by [blue]!Increase![/blue].",
+  "AJAMASTICKERS-CHEMICAL.beforeCard": "#[aqua]X is increased by !Increase!.[/aqua]"
 }
