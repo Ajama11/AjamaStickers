@@ -31,7 +31,11 @@ public static class StickerSingletons
     
     public class StickerCombatSingleton() : CustomSingletonModel(HookType.Combat)
     {
-        
+        public override Task AfterCardEnteredCombat(CardModel card)
+        {
+            SetRandomPlacement(card);
+            return Task.CompletedTask;
+        }
     }
     
     public class StickerRunSingleton() : CustomSingletonModel(HookType.Run)
@@ -45,12 +49,6 @@ public static class StickerSingletons
 
             SetRandomPlacement(card);
             
-            return Task.CompletedTask;
-        }
-
-        public override Task AfterCardGeneratedForCombat(CardModel card, Player? creator)
-        {
-            SetRandomPlacement(card);
             return Task.CompletedTask;
         }
 
