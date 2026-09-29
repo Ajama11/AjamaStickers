@@ -68,7 +68,6 @@
 
     <ItemGroup>
       <Folder Include="AjamaStickersCode\Stickers\Specific\Defect\" />
-      <Folder Include="AjamaStickersCode\Stickers\Specific\Ironclad\" />
       <Folder Include="AjamaStickers\scenes\" />
     </ItemGroup>
 

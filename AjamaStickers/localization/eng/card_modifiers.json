@@ -46,5 +46,8 @@
   "AJAMASTICKERS-SKULL.afterCard": "#[aqua]Apply !DoomPower! [/aqua][gold]Doom[/gold][aqua] to ALL enemies.[/aqua]",
   "AJAMASTICKERS-FLEX.title": "Flex",
   "AJAMASTICKERS-FLEX.description": "#After this card is played, gain [blue]!StrengthPower![/blue] [gold]Strength[/gold] this turn.",
-  "AJAMASTICKERS-FLEX.afterCard": "#[aqua]Gain !StrengthPower! [/aqua][gold]Strength[/gold][aqua] this turn.[/aqua]"
+  "AJAMASTICKERS-FLEX.afterCard": "#[aqua]Gain !StrengthPower! [/aqua][gold]Strength[/gold][aqua] this turn.[/aqua]",
+  "AJAMASTICKERS-ROCK.title": "Rock",
+  "AJAMASTICKERS-ROCK.description": "#After playing this card, add [blue]!C![/blue] [gold]Giant Rock(s)[/gold] into your [gold]Hand[/gold]. {Cards:plural|It gains|They gain} [gold]Ethereal[/gold] and [gold]Exhaust[/gold].",
+  "AJAMASTICKERS-ROCK.afterCard": "#[aqua]Add !C! [/aqua][gold]Giant Rock(s)[/gold][aqua] into your [/aqua][gold]Hand[/gold][aqua]. {Cards:plural|It gains|They gain} [/aqua][gold]Ethereal[/gold][aqua] and [/aqua][gold]Exhaust[/gold][aqua].[/aqua]"
 }
