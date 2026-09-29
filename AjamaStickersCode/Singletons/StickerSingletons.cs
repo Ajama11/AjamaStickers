@@ -75,9 +75,6 @@ public static class StickerSingletons
         public override Task AfterCardChangedPiles(CardModel card, PileType oldPileType, AbstractModel? clonedBy)
         {
             if (card.Pile is not { Type: PileType.Deck }) return Task.CompletedTask;
-        
-            // Temporary forcibly set sticker
-            // if (!card.TryGetModifier<TestSticker>(out _)) card.AddModifier<TestSticker>();
 
             SetRandomPlacement(card);
             
@@ -89,10 +86,6 @@ public static class StickerSingletons
             if (room is not CombatRoom) return false;
             
             rewards.Add(new StickerReward(player));
-            // rewards.Add(new StickerReward(player));
-            // rewards.Add(new StickerReward(player));
-            // rewards.Add(new StickerReward(player));
-            // rewards.Add(new StickerReward(player));
             
             return true;
         }
