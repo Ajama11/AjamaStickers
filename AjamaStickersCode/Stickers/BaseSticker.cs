@@ -116,7 +116,7 @@ public abstract class BaseSticker : CardModifier, ICustomModel
         {
             string beforeCardText = beforeCard.GetFormattedText();
             
-            if (!beforeCard.GetRawText().StartsWith("{Active:"))
+            if (!beforeCard.GetRawText().StartsWith("{Active:") && description.Length != 0)
             {
                 beforeCardText = beforeCardText + "\n";
             }
@@ -128,7 +128,7 @@ public abstract class BaseSticker : CardModifier, ICustomModel
         {
             string afterCardText = afterCard.GetFormattedText();
             
-            if (!afterCard.GetRawText().StartsWith("{Active:"))
+            if (!afterCard.GetRawText().StartsWith("{Active:") && description.Length != 0)
             {
                 afterCardText = "\n" + afterCardText;
             }
