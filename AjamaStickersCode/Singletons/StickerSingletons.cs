@@ -83,9 +83,30 @@ public static class StickerSingletons
 
         public override bool TryModifyRewards(Player player, List<Reward> rewards, AbstractRoom? room)
         {
-            if (room is not CombatRoom) return false;
-            
-            rewards.Add(new StickerReward(player));
+            if (room is TreasureRoom) Chance[player] += 5;
+            if (room is not CombatRoom combat) return false;
+            if (rewards.Count == 0) return false;
+
+            if (combat.RoomType == RoomType.Boss)
+            {
+                rewards.Add(new StickerReward(player));
+            }
+            else
+            {
+                int roll = player.RunState.Rng.CombatOrbGeneration.NextInt(100);
+                if (combat.RoomType == RoomType.Elite) roll += 13;
+
+                if (roll >= (100 - Chance[player]))
+                {
+                    rewards.Add(new StickerReward(player));
+                    Chance[player] -= 10;
+                }
+                else
+                {
+                    Chance[player] += 15;
+                    return false;
+                }
+            }
             
             return true;
         }
