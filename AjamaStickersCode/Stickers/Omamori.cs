@@ -14,7 +14,8 @@ public class Omamori() : BaseSticker
 
     public override bool ExtraConditionalToApply(CardModel card) =>
         card.Rarity == CardRarity.Curse &&
-        card.Keywords.Contains(CardKeyword.Unplayable);
+        card.Keywords.Contains(CardKeyword.Unplayable) && 
+        !card.Keywords.Contains(CardKeyword.Ethereal);
 
     protected override IEnumerable<DynamicVar> StickerCanonicalVars =>
     [
