@@ -15,9 +15,9 @@ namespace AjamaStickers.AjamaStickersCode.ConsoleCommands;
 
 public class StickerConsoleCmd : AbstractConsoleCmd
 {
-    public override string CmdName => "ajamasticker";
+    public override string CmdName => "ajamasticker-deck";
     public override string Args => "<id:string>";
-    public override string Description => "Put a Sticker onto a card in your Deck.";
+    public override string Description => "Apply a Sticker to a card in your Deck.";
     public override bool IsNetworked => true;
     
     public override CmdResult Process(Player? issuingPlayer, string[] args)

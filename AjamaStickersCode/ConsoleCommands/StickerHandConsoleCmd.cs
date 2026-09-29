@@ -14,9 +14,9 @@ namespace AjamaStickers.AjamaStickersCode.ConsoleCommands;
 
 public class StickerCombatConsoleCmd : AbstractConsoleCmd
 {
-    public override string CmdName => "ajamasticker-combat";
+    public override string CmdName => "ajamasticker-hand";
     public override string Args => "<id:string> <hand-index:int>";
-    public override string Description => "Put a Sticker onto a card in your Hand.";
+    public override string Description => "Apply a Sticker to a card in your Hand.";
     public override bool IsNetworked => true;
     
     public override CmdResult Process(Player? issuingPlayer, string[] args)
