@@ -37,5 +37,14 @@
   "AJAMASTICKERS-OMAMORI.description": "This card becomes playable for {Energy:energyIcons()} and gains [gold]Exhaust[/gold].",
   "AJAMASTICKERS-FLOW.title": "Flow",
   "AJAMASTICKERS-FLOW.description": "#When this card is drawn, draw [blue]!C![/blue] card(s).",
-  "AJAMASTICKERS-FLOW.afterCard": "#[aqua]When drawn, draw !C! card(s).[/aqua]"
+  "AJAMASTICKERS-FLOW.afterCard": "#[aqua]When drawn, draw !C! card(s).[/aqua]",
+  "AJAMASTICKERS-BONE.title": "Bone",
+  "AJAMASTICKERS-BONE.description": "#After this card is played, [gold]Summon[/gold] [blue]!Summon![/blue].",
+  "AJAMASTICKERS-BONE.afterCard": "#[gold]Summon[/gold][aqua] !Summon!.[/aqua]",
+  "AJAMASTICKERS-SKULL.title": "Skull",
+  "AJAMASTICKERS-SKULL.description": "#After this card is played, apply [blue]!DoomPower![/blue] [gold]Doom[/gold] to ALL enemies.",
+  "AJAMASTICKERS-SKULL.afterCard": "#[aqua]Apply !DoomPower! [/aqua][gold]Doom[/gold][aqua] to ALL enemies.[/aqua]",
+  "AJAMASTICKERS-FLEX.title": "Flex",
+  "AJAMASTICKERS-FLEX.description": "#After this card is played, gain [blue]!StrengthPower![/blue] [gold]Strength[/gold] this turn.",
+  "AJAMASTICKERS-FLEX.afterCard": "#[aqua]Gain !StrengthPower! [/aqua][gold]Strength[/gold][aqua] this turn.[/aqua]"
 }

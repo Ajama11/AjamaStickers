@@ -86,6 +86,27 @@ public abstract class BaseSticker : CardModifier, ICustomModel
         return possiblyPlayable && ExtraConditionalToApply(card);
     }
 
+    private static readonly Dictionary<Type, List<CharacterModel>> _draftRequirements = [];
+    public bool DraftRequirement(Player player, Func<CardModel, bool> shouldCharacterCount)
+    {
+        Type callingSticker = GetType();
+        
+        if (!_draftRequirements.ContainsKey(callingSticker))
+        {
+            _draftRequirements[callingSticker] = [];
+            
+            foreach (var character in ModelDb.AllCharacters)
+            {
+                if (character.CardPool.AllCards.Any(shouldCharacterCount))
+                    _draftRequirements[callingSticker].Add(character);
+            }
+            
+            MainFile.Logger.Warn($"{Title} can spawn for only {_draftRequirements[callingSticker].AsReadable(", ")}");
+        }
+
+        return _draftRequirements[callingSticker].Contains(player.Character);
+    }
+
     public override void OnInitialApplication()
     {
         if (ValuesSetForThisSave) return;
