@@ -73,9 +73,17 @@ public abstract class BaseSticker : CardModifier, ICustomModel
 
     public bool CanApplySticker(CardModel card)
     {
+        return !HasAnySticker(card) && CanApplyStickerInternal(card);
+    }
+
+    /// <summary>
+    /// Doesn't care if the card already has a Sticker, for debug purposes.
+    /// </summary>
+    public bool CanApplyStickerInternal(CardModel card)
+    {
         bool possiblyPlayable = true;
         if (RequiresCardToBePlayable) possiblyPlayable = !card.Keywords.Contains(CardKeyword.Unplayable);
-        return possiblyPlayable && !HasAnySticker(card) && ExtraConditionalToApply(card);
+        return possiblyPlayable && ExtraConditionalToApply(card);
     }
 
     public override void OnInitialApplication()
