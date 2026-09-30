@@ -52,5 +52,8 @@
   "AJAMASTICKERS-ROCK.afterCard": "#[aqua]Add !C! [/aqua][gold]Giant Rock(s)[/gold][aqua] into your [/aqua][gold]Hand[/gold][aqua]. {Cards:plural|It gains|They gain} [/aqua][gold]Ethereal[/gold][aqua] and [/aqua][gold]Exhaust[/gold][aqua].[/aqua]",
   "AJAMASTICKERS-MERCHANT.title": "Merchant",
   "AJAMASTICKERS-MERCHANT.description": "The merchant's prices are reduced by [blue]+5%[/blue]{IsMultiplayer: for ALL players|}, up to a max of [blue]+50%[/blue] ({IsReward:will be|currently} [blue]+{TotalDiscount:diff()}%[/blue]).",
-  "AJAMASTICKERS-MERCHANT.afterCard": "{InCombat:|{IsReward:[aqua]The merchant's prices are reduced by +5%[/aqua]{IsMultiplayer: [aqua]for ALL players[/aqua]|}[aqua], up to a max of +50%[/aqua] [aqua](will be[/aqua] [aqua]+{TotalDiscount:diff()}%).[/aqua]|[aqua]Total Discount of +{TotalDiscount:diff()}%[/aqua].}}"
+  "AJAMASTICKERS-MERCHANT.afterCard": "{InCombat:|{IsReward:[aqua]The merchant's prices are reduced by +5%[/aqua]{IsMultiplayer: [aqua]for ALL players[/aqua]|}[aqua], up to a max of +50%[/aqua] [aqua](will be[/aqua] [aqua]+{TotalDiscount:diff()}%).[/aqua]|[aqua]Total Discount of +{TotalDiscount:diff()}%[/aqua].}}",
+  "AJAMASTICKERS-COIN.title": "Coin",
+  "AJAMASTICKERS-COIN.description": "#When this card is removed from your [gold]Deck[/gold], gain [blue]!Gold![/blue] [gold]Gold[/gold].",
+  "AJAMASTICKERS-COIN.afterCard": "#{InCombat:|[aqua]When this card is removed from your [/aqua][gold]Deck[/gold][aqua], gain !Gold! [/aqua][gold]Gold[/gold][aqua].[/aqua]}"
 }

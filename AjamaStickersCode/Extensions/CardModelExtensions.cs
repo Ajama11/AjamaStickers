@@ -20,6 +20,16 @@ public static class CardModelExtensions
         {
             return card.TryGetModifier<T>(out _);
         }
+        
+        public bool TryGetSticker<T>(out T? sticker) where T : BaseSticker
+        {
+            return card.TryGetModifier(out sticker);
+        }
+
+        public bool TryGetSticker(out BaseSticker? sticker)
+        {
+            return card.TryGetModifier(out sticker);
+        }
 
         public bool CanApplySticker(BaseSticker sticker)
         {
