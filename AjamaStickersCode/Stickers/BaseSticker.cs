@@ -21,6 +21,7 @@ public abstract class BaseSticker : CardModifier, ICustomModel
     public virtual bool ExtraConditionalToApply(CardModel card) => true;
     public virtual bool CanSpawn(Player player) => true;
     public virtual void WhenStickerApplied() { }
+    public virtual void AddExtraArgsToLoc(LocString loc) { }
 
     public Texture2D BigIcon
     {
@@ -62,6 +63,8 @@ public abstract class BaseSticker : CardModifier, ICustomModel
         get => ((BoolVar) DynamicVars[ActiveKey]).BoolVal;
         set => ((BoolVar) DynamicVars[ActiveKey]).BoolVal = value;
     }
+
+    public int PlayerCount => Owner?.RunState?.Players.Count ?? 0;
 
     public LocString TitleLocString => GetLoc("title");
     public string Title => TitleLocString.GetFormattedText();
@@ -118,7 +121,10 @@ public abstract class BaseSticker : CardModifier, ICustomModel
 
     public override void AddTips(List<IHoverTip> tips)
     {
-        tips.Add(new HoverTip(TitleLocString, GetLoc(), SmallIcon));
+        LocString description = GetLoc();
+        AddExtraArgsToLoc(description);
+        
+        tips.Add(new HoverTip(TitleLocString, description, SmallIcon));
         tips.AddRange(ExtraHoverTips);
     }
 
@@ -156,5 +162,17 @@ public abstract class BaseSticker : CardModifier, ICustomModel
             
             description = description + afterCardText;
         }
+    }
+    
+    public override LocString GetLoc(string subKey = "description")
+    {
+        LocString loc = base.GetLoc(subKey);
+        
+        loc.Add("InCombat", Owner?.IsInCombat ?? false);
+        loc.Add("IsMultiplayer", PlayerCount > 1);
+        
+        AddExtraArgsToLoc(loc);
+
+        return loc;
     }
 }

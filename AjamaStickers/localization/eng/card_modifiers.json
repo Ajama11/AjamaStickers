@@ -49,5 +49,8 @@
   "AJAMASTICKERS-FLEX.afterCard": "#[aqua]Gain !StrengthPower! [/aqua][gold]Strength[/gold][aqua] this turn.[/aqua]",
   "AJAMASTICKERS-ROCK.title": "Rock",
   "AJAMASTICKERS-ROCK.description": "#After playing this card, add [blue]!C![/blue] [gold]Giant Rock(s)[/gold] into your [gold]Hand[/gold]. {Cards:plural|It gains|They gain} [gold]Ethereal[/gold] and [gold]Exhaust[/gold].",
-  "AJAMASTICKERS-ROCK.afterCard": "#[aqua]Add !C! [/aqua][gold]Giant Rock(s)[/gold][aqua] into your [/aqua][gold]Hand[/gold][aqua]. {Cards:plural|It gains|They gain} [/aqua][gold]Ethereal[/gold][aqua] and [/aqua][gold]Exhaust[/gold][aqua].[/aqua]"
+  "AJAMASTICKERS-ROCK.afterCard": "#[aqua]Add !C! [/aqua][gold]Giant Rock(s)[/gold][aqua] into your [/aqua][gold]Hand[/gold][aqua]. {Cards:plural|It gains|They gain} [/aqua][gold]Ethereal[/gold][aqua] and [/aqua][gold]Exhaust[/gold][aqua].[/aqua]",
+  "AJAMASTICKERS-MERCHANT.title": "Merchant",
+  "AJAMASTICKERS-MERCHANT.description": "The merchant's prices are reduced by [blue]+5%[/blue]{IsMultiplayer: for ALL players|}, up to a max of [blue]+50%[/blue] ({IsReward:will be|currently} [blue]+{TotalDiscount:diff()}%[/blue]).",
+  "AJAMASTICKERS-MERCHANT.afterCard": "{InCombat:|{IsReward:[aqua]The merchant's prices are reduced by +5%[/aqua]{IsMultiplayer: [aqua]for ALL players[/aqua]|}[aqua], up to a max of +50%[/aqua] [aqua](will be[/aqua] [aqua]+{TotalDiscount:diff()}%).[/aqua]|[aqua]Total Discount of +{TotalDiscount:diff()}%[/aqua].}}"
 }

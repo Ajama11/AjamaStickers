@@ -16,6 +16,11 @@ public static class CardModelExtensions
             return BaseSticker.HasAnySticker(card);
         }
 
+        public bool HasSpecificSticker<T>() where T : BaseSticker
+        {
+            return card.TryGetModifier<T>(out _);
+        }
+
         public bool CanApplySticker(BaseSticker sticker)
         {
             return sticker.CanApplySticker(card);
