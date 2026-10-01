@@ -18,7 +18,8 @@ public class Loyal : BaseSticker
         return card.Type != CardType.Power &&
                !card.Keywords.Contains(CardKeyword.Exhaust) &&
                card is not ThrummingHatchet &&
-               card is not Bolas;
+               card is not Bolas &&
+               card is not Bombardment;
     }
 
     public override async Task BeforeHandDraw(Player player, PlayerChoiceContext choiceContext, ICombatState combatState)
