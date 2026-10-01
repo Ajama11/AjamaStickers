@@ -45,7 +45,8 @@ public static class AfterCardTransformedPatch
             CardModel original = transformation.Original;
             CardModel? replacement = transformation.Replacement;
         
-            if (original.TryGetSticker<Coin>(out var coin))
+            if (original.TryGetSticker<Coin>(out var coin) &&
+                !transformation.IsInCombat)
             {
                 await CoinStickerSingleton.GiveGold(coin!, original.Owner);
             }

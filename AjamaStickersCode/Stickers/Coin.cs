@@ -13,6 +13,7 @@ namespace AjamaStickers.AjamaStickersCode.Stickers;
 public class Coin() : BaseSticker
 {
     public override bool RequiresCardToBePlayable => false;
+    public override bool HideNewLineOverride => InCombat;
 
     public override bool ExtraConditionalToApply(CardModel card) =>
         !card.Keywords.Contains(CardKeyword.Eternal);

@@ -17,6 +17,7 @@ namespace AjamaStickers.AjamaStickersCode.Stickers;
 public abstract class BaseSticker : CardModifier, ICustomModel
 {
     public virtual bool RequiresCardToBePlayable => true;
+    public virtual bool HideNewLineOverride => false;
     public virtual List<IHoverTip> ExtraHoverTips => [];
     protected virtual IEnumerable<DynamicVar> StickerCanonicalVars => [];
     
@@ -68,6 +69,7 @@ public abstract class BaseSticker : CardModifier, ICustomModel
 
     public int PlayerCount => RunManager.Instance.State?.Players.Count ?? 0;
     public bool IsMultiplayer => PlayerCount > 1;
+    public bool InCombat => Owner?.IsInCombat ?? false;
     
     public CardModel Card => Owner!;
     public Player Player => Owner?.Owner!;
@@ -154,7 +156,7 @@ public abstract class BaseSticker : CardModifier, ICustomModel
         {
             string beforeCardText = beforeCard.GetFormattedText();
             
-            if (!beforeCard.GetRawText().StartsWith("{Active:") && description.Length != 0)
+            if (!HideNewLineOverride && !beforeCard.GetRawText().StartsWith("{Active:") && description.Length != 0)
             {
                 beforeCardText = beforeCardText + "\n";
             }
@@ -166,7 +168,7 @@ public abstract class BaseSticker : CardModifier, ICustomModel
         {
             string afterCardText = afterCard.GetFormattedText();
             
-            if (!afterCard.GetRawText().StartsWith("{Active:") && description.Length != 0)
+            if (!HideNewLineOverride && !afterCard.GetRawText().StartsWith("{Active:") && description.Length != 0)
             {
                 afterCardText = "\n" + afterCardText;
             }
@@ -179,7 +181,7 @@ public abstract class BaseSticker : CardModifier, ICustomModel
     {
         LocString loc = base.GetLoc(subKey);
         
-        loc.Add("InCombat", Owner?.IsInCombat ?? false);
+        loc.Add("InCombat", InCombat);
         loc.Add("IsMultiplayer", IsMultiplayer);
         
         AddExtraArgsToLoc(loc);
