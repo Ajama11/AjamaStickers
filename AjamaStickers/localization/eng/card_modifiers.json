@@ -55,5 +55,8 @@
   "AJAMASTICKERS-MERCHANT.afterCard": "{InCombat:|{IsReward:[aqua]The merchant's prices are reduced by +5%[/aqua]{IsMultiplayer: [aqua]for ALL players[/aqua]|}[aqua], up to a max of +50%[/aqua] [aqua](will be[/aqua] [aqua]+{TotalDiscount:diff()}%).[/aqua]|[aqua]Total Discount of +{TotalDiscount:diff()}%[/aqua].}}",
   "AJAMASTICKERS-COIN.title": "Coin",
   "AJAMASTICKERS-COIN.description": "#When this card is removed from your [gold]Deck[/gold], gain [blue]!Gold![/blue] [gold]Gold[/gold].",
-  "AJAMASTICKERS-COIN.afterCard": "#{InCombat:|[aqua]When this card is removed from your [/aqua][gold]Deck[/gold][aqua], gain !Gold! [/aqua][gold]Gold[/gold][aqua].[/aqua]}"
+  "AJAMASTICKERS-COIN.afterCard": "#{InCombat:|[aqua]When this card is removed from your [/aqua][gold]Deck[/gold][aqua], gain !Gold! [/aqua][gold]Gold[/gold][aqua].[/aqua]}",
+  "AJAMASTICKERS-BOMB.title": "Bomb",
+  "AJAMASTICKERS-BOMB.description": "#At the end of [blue]!Turns![/blue] turns after this card is played, deal [blue]!BombDamage![/blue] damage to ALL enemies.",
+  "AJAMASTICKERS-BOMB.afterCard": "#[aqua]At the end of !Turns! turns, deal !BombDamage! damage to ALL enemies.[/aqua]"
 }
