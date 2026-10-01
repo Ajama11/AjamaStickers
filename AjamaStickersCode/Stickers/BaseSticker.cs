@@ -2,6 +2,7 @@ using BaseLib.Abstracts;
 using BaseLib.Extensions;
 using Godot;
 using MegaCrit.Sts2.Core.Assets;
+using MegaCrit.Sts2.Core.Combat;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.Entities.Players;
@@ -67,6 +68,14 @@ public abstract class BaseSticker : CardModifier, ICustomModel
 
     public int PlayerCount => RunManager.Instance.State?.Players.Count ?? 0;
     public bool IsMultiplayer => PlayerCount > 1;
+    
+    public CardModel Card => Owner!;
+    public Player Player => Owner?.Owner!;
+    public List<Player> OtherPlayers =>
+        Owner?.Owner.RunState.Players.Where(p => p != Owner.Owner).ToList()!;
+    public List<Creature> Allies =>
+        Owner?.CombatState?.PlayerCreatures.Where(c => c != Owner.Owner.Creature).ToList()!;
+    public ICombatState? CombatState => Owner?.CombatState;
 
     public LocString TitleLocString => GetLoc("title");
     public string Title => TitleLocString.GetFormattedText();

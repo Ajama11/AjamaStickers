@@ -61,5 +61,8 @@
   "AJAMASTICKERS-BOMB.afterCard": "#[aqua]At the end of !Turns! turns, deal !BombDamage! damage to ALL enemies.[/aqua]",
   "AJAMASTICKERS-FOOTBALL.title": "Football",
   "AJAMASTICKERS-FOOTBALL.description": "#After this card is played, give it to a random ally.",
-  "AJAMASTICKERS-FOOTBALL.afterCard": "#[aqua]Give this card to a random ally.[/aqua]"
+  "AJAMASTICKERS-FOOTBALL.afterCard": "#[aqua]Give this card to a random ally.[/aqua]",
+  "AJAMASTICKERS-HOPE.title": "Hope",
+  "AJAMASTICKERS-HOPE.description": "After this [gold]Defend[/gold] is played, ALL allies gain the same amount of [gold]Block[/gold].",
+  "AJAMASTICKERS-HOPE.afterCard": "[aqua]ALL allies gain the same amount of [/aqua][gold]Block[/gold][aqua].[/aqua]"
 }
