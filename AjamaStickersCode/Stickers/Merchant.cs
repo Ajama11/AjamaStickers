@@ -15,7 +15,10 @@ namespace AjamaStickers.AjamaStickersCode.Stickers;
 public class Merchant() : BaseSticker
 {
     public override bool RequiresCardToBePlayable => false;
-    
+
+    public override bool CanSpawn(Player player) =>
+        MerchantStickerSingleton.GetTotalMerchantStickers(player) < 10;
+
     protected override IEnumerable<DynamicVar> StickerCanonicalVars =>
     [
         new DisplayVar<Merchant>("TotalDiscount", merchant =>
@@ -23,8 +26,11 @@ public class Merchant() : BaseSticker
             int bonusIfStickerIsBeingOfferedInReward =
                 merchant.Owner?.Pile == null ? 1 : 0;
 
-            return ((MerchantStickerSingleton.GetTotalMerchantStickers(merchant.Owner!.Owner) + bonusIfStickerIsBeingOfferedInReward) * 5)
-                .ToString();
+            int numberOfStickers =
+                MerchantStickerSingleton.GetTotalMerchantStickers(merchant.Owner!.Owner)
+                + bonusIfStickerIsBeingOfferedInReward;
+
+            return Math.Min((numberOfStickers * 5), 50).ToString();
         })
     ];
 
