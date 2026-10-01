@@ -15,6 +15,7 @@ namespace AjamaStickers.AjamaStickersCode.Stickers;
 public class Merchant() : BaseSticker
 {
     public override bool RequiresCardToBePlayable => false;
+    public override bool HideNewLineOverride => InCombat;
 
     public override bool CanSpawn(Player player) =>
         MerchantStickerSingleton.GetTotalMerchantStickers(player) < 10;
