@@ -64,5 +64,8 @@
   "AJAMASTICKERS-FOOTBALL.afterCard": "#[aqua]Give this card to a random ally.[/aqua]",
   "AJAMASTICKERS-HOPE.title": "Hope",
   "AJAMASTICKERS-HOPE.description": "After this [gold]Defend[/gold] is played, ALL allies gain the same amount of [gold]Block[/gold].",
-  "AJAMASTICKERS-HOPE.afterCard": "[aqua]ALL allies gain the same amount of [/aqua][gold]Block[/gold][aqua].[/aqua]"
+  "AJAMASTICKERS-HOPE.afterCard": "[aqua]ALL allies gain the same amount of [/aqua][gold]Block[/gold][aqua].[/aqua]",
+  "AJAMASTICKERS-ICE_CREAM.title": "Ice Cream",
+  "AJAMASTICKERS-ICE_CREAM.description": "#Your [gold]Energy[/gold] is conserved {IceCreamStickerPower:plural:this turn|for the next [blue]{}[/blue] turns}.",
+  "AJAMASTICKERS-ICE_CREAM.afterCard": "#[aqua]Your [/aqua][gold]Energy[/gold][aqua] is conserved {IceCreamStickerPower:plural:this turn|for the next {} turns}.[/aqua]"
 }
