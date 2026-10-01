@@ -11,8 +11,14 @@ namespace AjamaStickers.AjamaStickersCode.Stickers;
 public class Frontload() : BaseSticker
 {
     public override bool ExtraConditionalToApply(CardModel card) =>
-        !(card.Keywords.Contains(CardKeyword.Innate) &&
-         card.EnergyCost.GetWithModifiers(CostModifiers.All) == 0) &&
+        !(
+            card.Keywords.Contains(CardKeyword.Innate) && 
+            card.EnergyCost.GetWithModifiers(CostModifiers.All) == 0
+        ) &&
+        !(
+            card.Type == CardType.Power &&
+            card.EnergyCost.GetWithModifiers(CostModifiers.All) <= 1
+        ) &&
         !card.EnergyCost.CostsX;
 
     protected override IEnumerable<DynamicVar> StickerCanonicalVars =>
