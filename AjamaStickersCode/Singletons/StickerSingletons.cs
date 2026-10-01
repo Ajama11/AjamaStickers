@@ -5,6 +5,7 @@ using AjamaStickers.AjamaStickersCode.Stickers;
 using BaseLib.Abstracts;
 using BaseLib.Extensions;
 using BaseLib.Utils;
+using MegaCrit.Sts2.Core.Context;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Players;
 using MegaCrit.Sts2.Core.Extensions;
@@ -41,7 +42,11 @@ public static class StickerSingletons
                 .ToList()
                 .Find(c => c == card);
         }
-            
+        
+        int titleAsNumber = card.Title
+            .ToCharArray()
+            .Aggregate(0, (current, character) => current + character);
+        
         int positionInDeck = cardInDeckIfPossible == null ?
             42069 :
             card.Owner.Deck.Cards!.FirstIndex(c => c == card);
@@ -49,16 +54,19 @@ public static class StickerSingletons
         int netId = card.Owner?.NetId == null ?
             420 :
             (int) card.Owner.NetId;
+        
+        int floorAddedToDeck = card.FloorAddedToDeck ?? 6969;
+        
+        int currentFloor = card.RunState?.TotalFloor ?? 0;
             
         int seed = card.Owner?.RunState.Rng.Seed == null ?
             69420 :
             (int) card.Owner.RunState.Rng.Seed;
-            
+
         RandomPlacement[card] =
-            RuntimeHelpers.GetHashCode(card.Title) +
-            RuntimeHelpers.GetHashCode(card.FloorAddedToDeck) +
-            RuntimeHelpers.GetHashCode(positionInDeck + netId) + 
-            RuntimeHelpers.GetHashCode(seed);
+            (titleAsNumber * (positionInDeck + netId)) +
+            (floorAddedToDeck * currentFloor) + 
+            Math.Abs(seed);
     }
     
     public class StickerCombatSingleton() : CustomSingletonModel(HookType.Combat)
