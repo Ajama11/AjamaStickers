@@ -16,6 +16,6 @@ public class FlexStickerPower : CustomTemporaryPowerModelWrapper<Flex, StrengthP
     
     public override LocString Title => new ("powers", $"{Id.Entry}.title");
     
-    public override string CustomPackedIconPath => "res://images/atlases/power_atlas.sprites/flex_potion_power.tres";
-    public override string CustomBigIconPath => ImageHelper.GetImagePath("powers/flex_potion_power.png");
+    public override string CustomPackedIconPath => $"{Id.Entry.RemovePrefix().ToLowerInvariant()}.png".PowerImagePath();
+    public override string CustomBigIconPath => $"{Id.Entry.RemovePrefix().ToLowerInvariant()}.png".BigPowerImagePath();
 }

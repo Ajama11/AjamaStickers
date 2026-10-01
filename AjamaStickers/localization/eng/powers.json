@@ -1,6 +1,6 @@
 {
   "AJAMASTICKERS-FLEX_STICKER_POWER.title": "Flex Sticker",
-  "AJAMASTICKERS-ICE_CREAM_STICKER_POWER.title": "Ice Cream",
+  "AJAMASTICKERS-ICE_CREAM_STICKER_POWER.title": "Ice Cream Sticker",
   "AJAMASTICKERS-ICE_CREAM_STICKER_POWER.description": "Your [gold]Energy[/gold] is conserved for the next [blue]2[/blue] turns.",
   "AJAMASTICKERS-ICE_CREAM_STICKER_POWER.smartDescription": "#Your [gold]Energy[/gold] is conserved {Amount:plural:this turn|for the next [blue]{}[/blue] turns}."
 }
