@@ -63,10 +63,10 @@ public static class StickerSingletons
             69420 :
             (int) card.Owner.RunState.Rng.Seed;
 
-        RandomPlacement[card] =
+        RandomPlacement[card] = Math.Abs(
             (titleAsNumber * (positionInDeck + netId)) +
-            (floorAddedToDeck * currentFloor) + 
-            Math.Abs(seed);
+            (floorAddedToDeck * currentFloor) +
+            seed);
     }
     
     public class StickerCombatSingleton() : CustomSingletonModel(HookType.Combat)
