@@ -9,7 +9,8 @@ namespace AjamaStickers.AjamaStickersCode.Stickers.Specific.Regent;
 public class Starry : BaseSticker
 {
     public override bool CanSpawn(Player player) =>
-        player.Character.ShouldAlwaysShowStarCounter;
+        player.Character.ShouldAlwaysShowStarCounter || 
+        player.Deck.Cards.Any(c => c.CurrentStarCost > 0 || c.HasStarCostX);
 
     protected override IEnumerable<DynamicVar> StickerCanonicalVars =>
     [
