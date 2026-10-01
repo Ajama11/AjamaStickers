@@ -9,6 +9,7 @@ using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models;
+using MegaCrit.Sts2.Core.Runs;
 
 namespace AjamaStickers.AjamaStickersCode.Stickers;
 
@@ -64,7 +65,8 @@ public abstract class BaseSticker : CardModifier, ICustomModel
         set => ((BoolVar) DynamicVars[ActiveKey]).BoolVal = value;
     }
 
-    public int PlayerCount => Owner?.RunState?.Players.Count ?? 0;
+    public int PlayerCount => RunManager.Instance.State?.Players.Count ?? 0;
+    public bool IsMultiplayer => PlayerCount > 1;
 
     public LocString TitleLocString => GetLoc("title");
     public string Title => TitleLocString.GetFormattedText();
@@ -169,7 +171,7 @@ public abstract class BaseSticker : CardModifier, ICustomModel
         LocString loc = base.GetLoc(subKey);
         
         loc.Add("InCombat", Owner?.IsInCombat ?? false);
-        loc.Add("IsMultiplayer", PlayerCount > 1);
+        loc.Add("IsMultiplayer", IsMultiplayer);
         
         AddExtraArgsToLoc(loc);
 

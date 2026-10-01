@@ -58,5 +58,8 @@
   "AJAMASTICKERS-COIN.afterCard": "#{InCombat:|[aqua]When this card is removed from your [/aqua][gold]Deck[/gold][aqua], gain !Gold! [/aqua][gold]Gold[/gold][aqua].[/aqua]}",
   "AJAMASTICKERS-BOMB.title": "Bomb",
   "AJAMASTICKERS-BOMB.description": "#At the end of [blue]!Turns![/blue] turns after this card is played, deal [blue]!BombDamage![/blue] damage to ALL enemies.",
-  "AJAMASTICKERS-BOMB.afterCard": "#[aqua]At the end of !Turns! turns, deal !BombDamage! damage to ALL enemies.[/aqua]"
+  "AJAMASTICKERS-BOMB.afterCard": "#[aqua]At the end of !Turns! turns, deal !BombDamage! damage to ALL enemies.[/aqua]",
+  "AJAMASTICKERS-FOOTBALL.title": "Football",
+  "AJAMASTICKERS-FOOTBALL.description": "#After this card is played, give it to a random ally.",
+  "AJAMASTICKERS-FOOTBALL.afterCard": "#[aqua]Give this card to a random ally.[/aqua]"
 }
