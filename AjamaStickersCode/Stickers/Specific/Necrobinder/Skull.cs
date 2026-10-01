@@ -1,3 +1,4 @@
+using AjamaStickers.AjamaStickersCode.Utils;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Creatures;
@@ -30,8 +31,6 @@ public class Skull() : BaseSticker
     {
         if (cardPlay.Card != Owner) return;
 
-        await PowerCmd.Apply<DoomPower>(choiceContext,
-            Owner.CombatState!.HittableEnemies, DynamicVars.Doom.BaseValue,
-            Owner.Owner.Creature, Owner);
+        await MyActions.Apply<DoomPower>(choiceContext, this, CombatState!.HittableEnemies);
     }
 }

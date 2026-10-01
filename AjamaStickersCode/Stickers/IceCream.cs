@@ -1,4 +1,5 @@
 using AjamaStickers.AjamaStickersCode.Powers;
+using AjamaStickers.AjamaStickersCode.Utils;
 using BaseLib.Extensions;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
@@ -26,8 +27,6 @@ public class IceCream() : BaseSticker
     {
         if (cardPlay.Card != Owner) return;
 
-        await PowerCmd.Apply<IceCreamStickerPower>(choiceContext,
-            Player.Creature, DynamicVars.Power<IceCreamStickerPower>().BaseValue,
-            Player.Creature, Card);
+        await MyActions.ApplySelf<IceCreamStickerPower>(choiceContext, this);
     }
 }
