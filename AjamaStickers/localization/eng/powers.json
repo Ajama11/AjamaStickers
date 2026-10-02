@@ -2,5 +2,8 @@
   "AJAMASTICKERS-FLEX_STICKER_POWER.title": "Flex Sticker",
   "AJAMASTICKERS-ICE_CREAM_STICKER_POWER.title": "Ice Cream Sticker",
   "AJAMASTICKERS-ICE_CREAM_STICKER_POWER.description": "Your [gold]Energy[/gold] is conserved for the next [blue]2[/blue] turns.",
-  "AJAMASTICKERS-ICE_CREAM_STICKER_POWER.smartDescription": "#Your [gold]Energy[/gold] is conserved {Amount:plural:this turn|for the next [blue]{}[/blue] turns}."
+  "AJAMASTICKERS-ICE_CREAM_STICKER_POWER.smartDescription": "#Your [gold]Energy[/gold] is conserved {Amount:plural:this turn|for the next [blue]{}[/blue] turns}.",
+  "AJAMASTICKERS-DOUGH_STICKER_POWER.title": "Dough Sticker",
+  "AJAMASTICKERS-DOUGH_STICKER_POWER.description": "The next Colorless card you play is played twice.",
+  "AJAMASTICKERS-DOUGH_STICKER_POWER.smartDescription": "#The next {Amount:plural:|[blue]{}[/blue] }Colorless {Amount:plural:card|cards} you play {Amount:plural:is|are} played twice."
 }

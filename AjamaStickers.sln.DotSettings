@@ -124,9 +124,17 @@ using MegaCrit.Sts2.Core.Models;
 namespace $NAMESPACE$;
 
 public class $CLASS$() : BaseSticker {
+    public override bool ExtraConditionalToApply(CardModel card) =&gt;
+        true;
+    
     protected override IEnumerable&lt;DynamicVar&gt; StickerCanonicalVars =&gt;
     [
         $END$
+    ];
+    
+    public override List&lt;IHoverTip&gt; ExtraHoverTips =&gt;
+    [
+        
     ];
 
     public override void WhenStickerApplied()

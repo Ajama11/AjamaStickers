@@ -70,5 +70,18 @@
   "AJAMASTICKERS-ICE_CREAM.afterCard": "#[aqua]Your [/aqua][gold]Energy[/gold][aqua] is conserved {IceCreamStickerPower:plural:this turn|for the next {} turns}.[/aqua]",
   "AJAMASTICKERS-CULTIST.title": "Cultist",
   "AJAMASTICKERS-CULTIST.description": "#After this card is played, gain [blue]!RitualPower![/blue] [gold]Ritual[/gold].",
-  "AJAMASTICKERS-CULTIST.afterCard": "#[aqua]Gain !RitualPower! [/aqua][gold]Ritual[/gold][aqua].[/aqua]"
+  "AJAMASTICKERS-CULTIST.afterCard": "#[aqua]Gain !RitualPower! [/aqua][gold]Ritual[/gold][aqua].[/aqua]",
+  "AJAMASTICKERS-EFFIGY.title": "Effigy",
+  "AJAMASTICKERS-EFFIGY.description": "#After this card is played, [gold]Exhaust[/gold] up to [blue]!C![/blue] card(s).",
+  "AJAMASTICKERS-EFFIGY.afterCard": "#[gold]Exhaust[/gold][aqua] up to !C! card(s).[/aqua]",
+  "AJAMASTICKERS-EFFIGY.selectionScreenPrompt": "#Choose up to [blue]{Amount}[/blue] card(s) to [gold]Exhaust[/gold].",
+  "AJAMASTICKERS-BLADE.title": "Blade",
+  "AJAMASTICKERS-BLADE.description": "#After this card is played, put [gold]Sovereign Blade[/gold] into your [gold]Hand[/gold] from anywhere.",
+  "AJAMASTICKERS-BLADE.afterCard": "[aqua]Put [/aqua][gold]Sovereign Blade[/gold][aqua] into your [/aqua][gold]Hand[/gold][aqua] from anywhere.[/aqua]",
+  "AJAMASTICKERS-MINION.title": "Minion",
+  "AJAMASTICKERS-MINION.description": "#After playing this card, add [blue]!C![/blue] [gold]Minion Strike(s)[/gold] into your [gold]Hand[/gold]. {Cards:plural|It gains|They gain} [gold]Retain[/gold].",
+  "AJAMASTICKERS-MINION.afterCard": "#[aqua]Add !C! [/aqua][gold]Minion Strike(s)[/gold][aqua] into your [/aqua][gold]Hand[/gold][aqua]. {Cards:plural|It gains|They gain} [/aqua][gold]Retain[/gold][aqua].[/aqua]",
+  "AJAMASTICKERS-DOUGH.title": "Dough",
+  "AJAMASTICKERS-DOUGH.description": "#After playing this card, the next {DoughStickerPower:plural:|[blue]{}[/blue] }Colorless {DoughStickerPower:plural:card|cards} you play {DoughStickerPower:plural:is|are} played twice.",
+  "AJAMASTICKERS-DOUGH.afterCard": "[aqua]The next {DoughStickerPower:plural:|{} }Colorless {DoughStickerPower:plural:card|cards} you play {DoughStickerPower:plural:is|are} played twice.[/aqua]"
 }
