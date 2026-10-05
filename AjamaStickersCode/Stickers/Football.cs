@@ -18,7 +18,7 @@ public class Football() : BaseSticker
     public override bool ExtraConditionalToApply(CardModel card) =>
         card.Type != CardType.Power &&
         !card.Keywords.Contains(CardKeyword.Exhaust) &&
-        card is not TheBall;
+        card is not (TheBall or Outrage);
 
     public override CardLocation ModifyCardPlayResultLocation(CardModel card, bool isAutoPlay, ResourceInfo resources, CardLocation cardLocation)
     {
