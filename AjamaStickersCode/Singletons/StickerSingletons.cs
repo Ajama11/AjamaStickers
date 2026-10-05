@@ -102,7 +102,14 @@ public static class StickerSingletons
             else
             {
                 int roll = player.RunState.Rng.CombatOrbGeneration.NextInt(100);
-                if (combat.RoomType == RoomType.Elite) roll += 13;
+
+                bool isAfterTreasureRow = player.RunState.ActFloor > player.RunState.Map.GetRowCount() - 7;
+                
+                if (isAfterTreasureRow)
+                    roll += 7;
+                
+                if (combat.RoomType == RoomType.Elite)
+                    roll += isAfterTreasureRow ? 10 : 25; // Early Elites get a larger bonus than Late Elites, to incentivize sometimes taking an Early Elite
 
                 if (roll >= (100 - Chance[player]))
                 {
