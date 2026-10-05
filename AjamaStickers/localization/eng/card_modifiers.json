@@ -83,5 +83,17 @@
   "AJAMASTICKERS-MINION.afterCard": "#[aqua]Add !C! [/aqua][gold]Minion Strike(s)[/gold][aqua] into your [/aqua][gold]Hand[/gold][aqua]. {Cards:plural|It gains|They gain} [/aqua][gold]Retain[/gold][aqua].[/aqua]",
   "AJAMASTICKERS-DOUGH.title": "Dough",
   "AJAMASTICKERS-DOUGH.description": "#After playing this card, the next {DoughStickerPower:plural:|[blue]{}[/blue] }Colorless {DoughStickerPower:plural:card|cards} you play {DoughStickerPower:plural:is|are} played twice.",
-  "AJAMASTICKERS-DOUGH.afterCard": "[aqua]The next {DoughStickerPower:plural:|{} }Colorless {DoughStickerPower:plural:card|cards} you play {DoughStickerPower:plural:is|are} played twice.[/aqua]"
+  "AJAMASTICKERS-DOUGH.afterCard": "[aqua]The next {DoughStickerPower:plural:|{} }Colorless {DoughStickerPower:plural:card|cards} you play {DoughStickerPower:plural:is|are} played twice.[/aqua]",
+  "AJAMASTICKERS-DAGGER.title": "Dagger",
+  "AJAMASTICKERS-DAGGER.description": "#After playing this card, add [blue]!C![/blue] [gold]Shiv(s)[/gold] into your [gold]Hand[/gold].",
+  "AJAMASTICKERS-DAGGER.afterCard": "#[aqua]Add !C! [/aqua][gold]Shiv(s)[/gold][aqua] into your [/aqua][gold]Hand[/gold][aqua].[/aqua]",
+  "AJAMASTICKERS-HASTE.title": "Haste",
+  "AJAMASTICKERS-HASTE.description": "#After this card is played, draw [blue]!C![/blue] card(s) and immediately discard them.",
+  "AJAMASTICKERS-HASTE.afterCard": "#[aqua]Draw !C! card(s) and immediately discard them.[/aqua]",
+  "AJAMASTICKERS-VIRUS.title": "Virus",
+  "AJAMASTICKERS-VIRUS.description": "After playing this card, [gold]Poison[/gold] triggers immediately.",
+  "AJAMASTICKERS-VIRUS.afterCard": "[gold]Poison[/gold][aqua] triggers immediately.[/aqua]",
+  "AJAMASTICKERS-DISARM.title": "Disarm",
+  "AJAMASTICKERS-DISARM.description": "#After this card is played, apply [blue]!WeakPower![/blue] [gold]Weak[/gold] to ALL enemies.",
+  "AJAMASTICKERS-DISARM.afterCard": "#[aqua]Apply !WeakPower! [/aqua][gold]Weak[/gold][aqua] to ALL enemies.[/aqua]"
 }
