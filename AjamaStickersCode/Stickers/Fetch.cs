@@ -21,7 +21,10 @@ public class Fetch() : BaseSticker
         if (cardPlay.Card != Owner) return;
 
         CardSelectorPrefs prefs = new CardSelectorPrefs(SelectionScreenPrompt, 
-            0, DynamicVars.Cards.IntValue);
+            0, DynamicVars.Cards.IntValue)
+        {
+            RequireManualConfirmation = false
+        };
 
         List<CardModel> cards =
             (await CardSelectCmd.FromCombatPile(choiceContext,
