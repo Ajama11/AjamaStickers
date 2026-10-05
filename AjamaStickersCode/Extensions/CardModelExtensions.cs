@@ -36,14 +36,16 @@ public static class CardModelExtensions
             return sticker.CanApplySticker(card);
         }
 
-        public void ApplySticker<T>() where T : BaseSticker
+        public T ApplySticker<T>() where T : BaseSticker
         {
-            card.AddModifier<T>();
+            return (T) card.ApplySticker(ModelDb.Sticker<T>());
         }
-
-        public void ApplySticker(BaseSticker canonicalSticker)
+        
+        public BaseSticker ApplySticker(BaseSticker canonicalSticker)
         {
-            card.AddModifier((CardModifier) canonicalSticker.MutableClone());
+            var mutable = (BaseSticker) canonicalSticker.MutableClone();
+            card.AddModifier(mutable);
+            return mutable;
         }
 
         public List<BaseSticker> GetPossibleStickers()

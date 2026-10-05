@@ -65,7 +65,10 @@ public class StickerReward(Player player) : CustomReward(player)
             BaseSticker? sticker = Player.RunState.Rng.CombatCardSelection.NextItem(possibleStickers);
             if (sticker == null) continue;
             
-            newCard.ApplySticker(sticker);
+            var newSticker = newCard.ApplySticker(sticker);
+
+            if (newSticker is Merchant merchant)
+                merchant.IsReward = true;
             
             DeckVersion[newCard] = card;
             allOptions.Add(new StickeredCardOption
@@ -90,7 +93,11 @@ public class StickerReward(Player player) : CustomReward(player)
         if (selectedCard == null) return false;
 
         var sticker = StickeredCardOptions.First(o => o.Card == selectedCard).Sticker;
-        DeckVersion[selectedCard].ApplySticker(sticker);
+        
+        var deckSticker = DeckVersion[selectedCard].ApplySticker(sticker);
+        
+        if (deckSticker is Merchant merchant)
+            merchant.IsReward = false;
         
         return true;
     }

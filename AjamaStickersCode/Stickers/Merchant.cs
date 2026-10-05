@@ -20,12 +20,14 @@ public class Merchant() : BaseSticker
     public override bool CanSpawn(Player player) =>
         MerchantStickerSingleton.GetTotalMerchantStickers(player) < 10;
 
+    public bool IsReward { get; set; }
+
     protected override IEnumerable<DynamicVar> StickerCanonicalVars =>
     [
         new DisplayVar<Merchant>("TotalDiscount", merchant =>
         {
             int bonusIfStickerIsBeingOfferedInReward =
-                merchant.Owner?.Pile == null ? 1 : 0;
+                merchant.IsReward ? 1 : 0;
 
             int numberOfStickers =
                 MerchantStickerSingleton.GetTotalMerchantStickers(merchant.Owner!.Owner)
@@ -37,6 +39,6 @@ public class Merchant() : BaseSticker
 
     public override void AddExtraArgsToLoc(LocString loc)
     {
-        loc.Add("IsReward", Owner?.Pile == null);
+        loc.Add("IsReward", IsReward);
     }
 }
