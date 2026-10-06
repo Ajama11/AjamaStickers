@@ -107,5 +107,14 @@
   "AJAMASTICKERS-HEARTBEAT.afterCard": "#[aqua]Add !C! [/aqua][purple]Sown[/purple][aqua] [/aqua][gold]Soul(s)[/gold][aqua] into your [/aqua][gold]Draw Pile[/gold][aqua].[/aqua]",
   "AJAMASTICKERS-LAUGH.title": "Laugh",
   "AJAMASTICKERS-LAUGH.description": "#After this card is played, gain [blue]!VigorPower![/blue] [gold]Vigor[/gold].",
-  "AJAMASTICKERS-LAUGH.afterCard": "#[aqua]Gain !VigorPower! [/aqua][gold]Vigor[/gold][aqua].[/aqua]"
+  "AJAMASTICKERS-LAUGH.afterCard": "#[aqua]Gain !VigorPower! [/aqua][gold]Vigor[/gold][aqua].[/aqua]",
+  "AJAMASTICKERS-DEMON.title": "Demon",
+  "AJAMASTICKERS-DEMON.description": "#After this card is played, lose [blue]!HpLoss![/blue] HP and gain [blue]!StrengthPower![/blue] [gold]Strength[/gold].",
+  "AJAMASTICKERS-DEMON.afterCard": "#[aqua]Lose !HpLoss! HP. Gain !StrengthPower! [/aqua][gold]Strength[/gold][aqua].[/aqua]",
+  "AJAMASTICKERS-PUNCH.title": "Punch",
+  "AJAMASTICKERS-PUNCH.description": "Whenever you apply [gold]Vulnerable[/gold], if this card is in your [gold]Draw Pile[/gold], play it.",
+  "AJAMASTICKERS-PUNCH.afterCard": "[aqua]Whenever you apply [/aqua][gold]Vulnerable[/gold][aqua], if this is in your [/aqua][gold]Draw Pile[/gold][aqua], play it.[/aqua]",
+  "AJAMASTICKERS-STRIKE_DUMMY.title": "Strike Dummy",
+  "AJAMASTICKERS-STRIKE_DUMMY.description": "This card counts as a \"Strike\" and costs [blue]1[/blue] less {Energy:energyIcons()}.",
+  "AJAMASTICKERS-STRIKE_DUMMY.afterCard": "[aqua]Counts as a \"Strike\".[/aqua]"
 }
