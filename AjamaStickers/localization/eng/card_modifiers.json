@@ -95,5 +95,14 @@
   "AJAMASTICKERS-VIRUS.afterCard": "[gold]Poison[/gold][aqua] triggers immediately.[/aqua]",
   "AJAMASTICKERS-DISARM.title": "Disarm",
   "AJAMASTICKERS-DISARM.description": "#After this card is played, apply [blue]!WeakPower![/blue] [gold]Weak[/gold] to ALL enemies.",
-  "AJAMASTICKERS-DISARM.afterCard": "#[aqua]Apply !WeakPower! [/aqua][gold]Weak[/gold][aqua] to ALL enemies.[/aqua]"
+  "AJAMASTICKERS-DISARM.afterCard": "#[aqua]Apply !WeakPower! [/aqua][gold]Weak[/gold][aqua] to ALL enemies.[/aqua]",
+  "AJAMASTICKERS-GHOST.title": "Ghost",
+  "AJAMASTICKERS-GHOST.description": "At the end of your turn, if this card is in your [gold]Hand[/gold], discard it.",
+  "AJAMASTICKERS-GHOST.afterCard": "[aqua]At the end of your turn, if this card is in your [/aqua][gold]Hand[/gold][aqua], discard it.[/aqua]",
+  "AJAMASTICKERS-GRIM.title": "Grim",
+  "AJAMASTICKERS-GRIM.description": "Whenever an enemy dies, put this into your [gold]Hand[/gold].",
+  "AJAMASTICKERS-GRIM.afterCard": "[aqua]Whenever an enemy dies, put this into your [/aqua][gold]Hand[/gold][aqua].[/aqua]",
+  "AJAMASTICKERS-HEARTBEAT.title": "Heartbeat",
+  "AJAMASTICKERS-HEARTBEAT.description": "#After this card is played, add [blue]!C![/blue] [purple]Sown[/purple] [gold]Soul(s)[/gold] into your [gold]Draw Pile[/gold].",
+  "AJAMASTICKERS-HEARTBEAT.afterCard": "#[aqua]Add !C! [/aqua][purple]Sown[/purple][aqua] [/aqua][gold]Soul(s)[/gold][aqua] into your [/aqua][gold]Draw Pile[/gold][aqua].[/aqua]"
 }
