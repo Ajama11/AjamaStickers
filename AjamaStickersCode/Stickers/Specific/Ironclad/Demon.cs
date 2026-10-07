@@ -17,9 +17,6 @@ public class Demon() : BaseSticker
 {
     public override bool CanSpawn(Player player) =>
         player.Character is MegaCrit.Sts2.Core.Models.Characters.Ironclad;
-    
-    public override bool ExtraConditionalToApply(CardModel card) =>
-        true;
 
     protected override IEnumerable<DynamicVar> StickerCanonicalVars =>
     [

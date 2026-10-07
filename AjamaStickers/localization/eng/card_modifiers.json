@@ -130,5 +130,18 @@
   "AJAMASTICKERS-FOCUSED.description": "#After this card is played, gain [blue]!FocusedStickerPower![/blue] [gold]Focus[/gold] this turn.",
   "AJAMASTICKERS-FOCUSED.afterCard": "#[aqua]Gain !FocusedStickerPower! [/aqua][gold]Focus[/gold][aqua] this turn.[/aqua]",
   "AJAMASTICKERS-TALONS.title": "Talons",
-  "AJAMASTICKERS-TALONS.description": "This card gains [gold]Replay[/gold] [blue]1[/blue]."
+  "AJAMASTICKERS-TALONS.description": "This card gains [gold]Replay[/gold] [blue]1[/blue].",
+  "AJAMASTICKERS-READY.title": "Ready",
+  "AJAMASTICKERS-READY.description": "This card gains [gold]Retain[/gold].",
+  "AJAMASTICKERS-DOUBLE.title": "Double",
+  "AJAMASTICKERS-DOUBLE.description": "This card gains [gold]Replay[/gold] [blue]1[/blue] and [gold]Exhaust[/gold].",
+  "AJAMASTICKERS-HIGH_FIVE.title": "High Five",
+  "AJAMASTICKERS-HIGH_FIVE.description": "#After this card is played, play !C! random card(s) with a Sticker in your [gold]Draw Pile[/gold].",
+  "AJAMASTICKERS-HIGH_FIVE.afterCard": "#[aqua]Play !C! random card(s) with a Sticker in your [/aqua][gold]Draw Pile[/gold][aqua].[/aqua]",
+  "AJAMASTICKERS-SETUP.title": "Setup",
+  "AJAMASTICKERS-SETUP.description": "After this card is played, put the highest cost card in your [gold]Draw Pile[/gold] into your [gold]Hand[/gold]. It gains [gold]Retain[/gold] this turn.",
+  "AJAMASTICKERS-SETUP.afterCard": "[aqua]Put the highest cost card in your [/aqua][gold]Draw Pile[/gold][aqua] into your [/aqua][gold]Hand[/gold][aqua]. It gains [/aqua][gold]Retain[/gold][aqua] this turn.[/aqua]",
+  "AJAMASTICKERS-MITOSIS.title": "Mitosis",
+  "AJAMASTICKERS-MITOSIS.description": "At the end of your turn, if this card is in your [gold]Hand[/gold], add a copy of it into your [gold]Draw Pile[/gold].",
+  "AJAMASTICKERS-MITOSIS.afterCard": "[aqua]At the end of your turn, if this is in your [/aqua][gold]Hand[/gold][aqua], add a copy into your [/aqua][gold]Draw Pile[/gold][aqua].[/aqua]"
 }

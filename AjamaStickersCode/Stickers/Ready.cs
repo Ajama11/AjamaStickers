@@ -9,24 +9,20 @@ using MegaCrit.Sts2.Core.Localization;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models;
 
-namespace AjamaStickers.AjamaStickersCode.Stickers.Specific.Defect;
+namespace AjamaStickers.AjamaStickersCode.Stickers;
 
-public class Talons() : BaseSticker
+public class Ready() : BaseSticker
 {
-    public override bool CanSpawn(Player player) =>
-        player.Character is MegaCrit.Sts2.Core.Models.Characters.Defect;
-    
     public override bool ExtraConditionalToApply(CardModel card) =>
-        card.EnergyCost.GetWithModifiers(CostModifiers.All) == 0 &&
-        !card.EnergyCost.CostsX;
+        !card.Keywords.Contains(CardKeyword.Retain);
     
     public override List<IHoverTip> ExtraHoverTips =>
     [
-        HoverTipFactory.Static(StaticHoverTip.ReplayStatic)
+        HoverTipFactory.FromKeyword(CardKeyword.Retain)
     ];
 
     public override void WhenStickerApplied()
     {
-        Card.BaseReplayCount += 1;
+        Card.AddKeyword(CardKeyword.Retain);
     }
 }

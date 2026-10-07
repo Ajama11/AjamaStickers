@@ -8,18 +8,17 @@ using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models;
+using MegaCrit.Sts2.Core.Models.Cards;
 
-namespace AjamaStickers.AjamaStickersCode.Stickers.Specific.Defect;
+namespace AjamaStickers.AjamaStickersCode.Stickers;
 
-public class Talons() : BaseSticker
+public class Double() : BaseSticker
 {
-    public override bool CanSpawn(Player player) =>
-        player.Character is MegaCrit.Sts2.Core.Models.Characters.Defect;
-    
     public override bool ExtraConditionalToApply(CardModel card) =>
-        card.EnergyCost.GetWithModifiers(CostModifiers.All) == 0 &&
-        !card.EnergyCost.CostsX;
-    
+        card.Type is (CardType.Attack or CardType.Skill) &&
+        !card.Keywords.Contains(CardKeyword.Exhaust) &&
+        card is not (BattleTrance or PanicButton);
+
     public override List<IHoverTip> ExtraHoverTips =>
     [
         HoverTipFactory.Static(StaticHoverTip.ReplayStatic)
@@ -28,5 +27,6 @@ public class Talons() : BaseSticker
     public override void WhenStickerApplied()
     {
         Card.BaseReplayCount += 1;
+        Card.AddKeyword(CardKeyword.Exhaust);
     }
 }
