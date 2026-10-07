@@ -122,5 +122,13 @@
   "AJAMASTICKERS-MICROCHIP.afterCard": "[aqua]Trigger the passive ability of all Orbs.[/aqua]",
   "AJAMASTICKERS-CAPACITOR.title": "Capacitor",
   "AJAMASTICKERS-CAPACITOR.description": "#The first time this card is played, gain [blue]!Repeat![/blue] Orb Slot(s).",
-  "AJAMASTICKERS-CAPACITOR.afterCard": "#{Active:\n[aqua]The first time this card is played, gain !Repeat! Orb Slot(s).[/aqua]|}"
+  "AJAMASTICKERS-CAPACITOR.afterCard": "#{Active:\n[aqua]The first time this card is played, gain !Repeat! Orb Slot(s).[/aqua]|}",
+  "AJAMASTICKERS-MARBLE.title": "Marble",
+  "AJAMASTICKERS-MARBLE.description": "#After this card is played, [gold]Channel[/gold] [blue]!Repeat![/blue] [gold]Glass[/gold].",
+  "AJAMASTICKERS-MARBLE.afterCard": "#[gold]Channel[/gold][aqua] !Repeat! [/aqua][gold]Glass[/gold][aqua].[/aqua]",
+  "AJAMASTICKERS-FOCUSED.title": "Focused",
+  "AJAMASTICKERS-FOCUSED.description": "#After this card is played, gain [blue]!FocusedStickerPower![/blue] [gold]Focus[/gold] this turn.",
+  "AJAMASTICKERS-FOCUSED.afterCard": "#[aqua]Gain !FocusedStickerPower! [/aqua][gold]Focus[/gold][aqua] this turn.[/aqua]",
+  "AJAMASTICKERS-TALONS.title": "Talons",
+  "AJAMASTICKERS-TALONS.description": "This card gains [gold]Replay[/gold] [blue]1[/blue]."
 }
