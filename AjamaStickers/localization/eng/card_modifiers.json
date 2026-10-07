@@ -116,5 +116,11 @@
   "AJAMASTICKERS-PUNCH.afterCard": "[aqua]Whenever you apply [/aqua][gold]Vulnerable[/gold][aqua], if this is in your [/aqua][gold]Draw Pile[/gold][aqua], play it.[/aqua]",
   "AJAMASTICKERS-STRIKE_DUMMY.title": "Strike Dummy",
   "AJAMASTICKERS-STRIKE_DUMMY.description": "This card counts as a \"Strike\" and costs [blue]1[/blue] less {Energy:energyIcons()}.",
-  "AJAMASTICKERS-STRIKE_DUMMY.afterCard": "[aqua]Counts as a \"Strike\".[/aqua]"
+  "AJAMASTICKERS-STRIKE_DUMMY.afterCard": "[aqua]Counts as a \"Strike\".[/aqua]",
+  "AJAMASTICKERS-MICROCHIP.title": "Microchip",
+  "AJAMASTICKERS-MICROCHIP.description": "After this card is played, trigger the passive ability of all Orbs.",
+  "AJAMASTICKERS-MICROCHIP.afterCard": "[aqua]Trigger the passive ability of all Orbs.[/aqua]",
+  "AJAMASTICKERS-CAPACITOR.title": "Capacitor",
+  "AJAMASTICKERS-CAPACITOR.description": "#The first time this card is played, gain [blue]!Repeat![/blue] Orb Slot(s).",
+  "AJAMASTICKERS-CAPACITOR.afterCard": "#{Active:\n[aqua]The first time this card is played, gain !Repeat! Orb Slot(s).[/aqua]|}"
 }

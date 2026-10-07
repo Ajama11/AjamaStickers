@@ -10,6 +10,7 @@ using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models;
+using MegaCrit.Sts2.Core.Models.Cards;
 using MegaCrit.Sts2.Core.Runs;
 
 namespace AjamaStickers.AjamaStickersCode.Stickers;
@@ -83,6 +84,9 @@ public abstract class BaseSticker : CardModifier, ICustomModel
     public string Title => TitleLocString.GetFormattedText();
 
     public LocString SelectionScreenPrompt => GetLoc("selectionScreenPrompt");
+
+    public static bool IsNotSelfDupingCard(CardModel card) =>
+        card is not (Anger or Undeath or AdaptiveStrike);
     
     public static bool HasAnySticker(CardModel card) =>
         Modifiers(card).Any(m => m is BaseSticker);

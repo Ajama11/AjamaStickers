@@ -1,28 +1,28 @@
+using AjamaStickers.AjamaStickersCode.Utils;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Creatures;
+using MegaCrit.Sts2.Core.Entities.Players;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models;
-using MegaCrit.Sts2.Core.Models.Powers;
+using MegaCrit.Sts2.Core.Models.Cards;
 
-namespace AjamaStickers.AjamaStickersCode.Stickers;
+namespace AjamaStickers.AjamaStickersCode.Stickers.Specific.Defect;
 
-public class Sapping() : BaseSticker
+public class Capacitor() : BaseSticker
 {
+    public override bool CanSpawn(Player player) =>
+        player.Character.BaseOrbSlotCount > 0;
+    
     public override bool ExtraConditionalToApply(CardModel card) =>
         IsNotSelfDupingCard(card);
-    
+
     protected override IEnumerable<DynamicVar> StickerCanonicalVars =>
     [
-        new PowerVar<StrengthPower>(1)
-    ];
-    
-    public override List<IHoverTip> ExtraHoverTips =>
-    [
-        HoverTipFactory.FromPower<StrengthPower>()
+        new RepeatVar(1)
     ];
 
     public override async Task AfterCardPlayed(PlayerChoiceContext choiceContext, CardPlay cardPlay)
@@ -30,10 +30,8 @@ public class Sapping() : BaseSticker
         if (cardPlay.Card != Owner) return;
         if (!Active) return;
 
-        await PowerCmd.Apply<StrengthPower>(choiceContext,
-            Owner.CombatState!.HittableEnemies, -DynamicVars.Strength.BaseValue,
-            Owner.Owner.Creature, cardPlay.Card);
-
+        await OrbCmd.AddSlots(Player, DynamicVars.Repeat.IntValue);
+        
         Active = false;
     }
 }
