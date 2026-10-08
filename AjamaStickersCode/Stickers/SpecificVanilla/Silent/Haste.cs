@@ -3,24 +3,28 @@ using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Players;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
+using MegaCrit.Sts2.Core.Models;
 
-namespace AjamaStickers.AjamaStickersCode.Stickers.Specific.Regent;
+namespace AjamaStickers.AjamaStickersCode.Stickers.SpecificVanilla.Silent;
 
-public class Starry : BaseSticker
+public class Haste() : BaseSticker
 {
     public override bool CanSpawn(Player player) =>
-        player.Character.ShouldAlwaysShowStarCounter || 
-        player.Deck.Cards.Any(c => c.CurrentStarCost > 0 || c.HasStarCostX);
+        DraftRequirement(player, c => c.Keywords.Contains(CardKeyword.Sly));
 
     protected override IEnumerable<DynamicVar> StickerCanonicalVars =>
     [
-        new StarsVar(1)
+        new CardsVar(8)
     ];
 
     public override async Task AfterCardPlayed(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
         if (cardPlay.Card != Owner) return;
 
-        await PlayerCmd.GainStars(DynamicVars.Stars.BaseValue, cardPlay.Player);
+        IEnumerable<CardModel> cards = await CardPileCmd.Draw(choiceContext, DynamicVars.Cards.BaseValue, Player);
+
+        await Cmd.CustomScaledWait(0.4f, 0.8f);
+        
+        await CardCmd.Discard(choiceContext, cards);
     }
 }

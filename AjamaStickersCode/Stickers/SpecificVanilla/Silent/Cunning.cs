@@ -2,7 +2,7 @@ using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Players;
 using MegaCrit.Sts2.Core.Models;
 
-namespace AjamaStickers.AjamaStickersCode.Stickers.Specific.Silent;
+namespace AjamaStickers.AjamaStickersCode.Stickers.SpecificVanilla.Silent;
 
 public class Cunning : BaseSticker
 {

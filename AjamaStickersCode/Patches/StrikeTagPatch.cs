@@ -1,5 +1,5 @@
 using AjamaStickers.AjamaStickersCode.Extensions;
-using AjamaStickers.AjamaStickersCode.Stickers.Specific.Ironclad;
+using AjamaStickers.AjamaStickersCode.Stickers.SpecificVanilla.Ironclad;
 using HarmonyLib;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Models;

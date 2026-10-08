@@ -1,37 +1,32 @@
-using AjamaStickers.AjamaStickersCode.Powers;
 using AjamaStickers.AjamaStickersCode.Utils;
-using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
-using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.Entities.Players;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.HoverTips;
-using MegaCrit.Sts2.Core.Localization;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
-using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.Powers;
 
-namespace AjamaStickers.AjamaStickersCode.Stickers.Specific.Defect;
+namespace AjamaStickers.AjamaStickersCode.Stickers.SpecificVanilla.Necrobinder;
 
-public class Focused() : BaseSticker
+public class Skull() : BaseSticker
 {
     public override bool CanSpawn(Player player) =>
-        player.Character.BaseOrbSlotCount > 0;
-
+        DraftRequirement(player, c => c.DynamicVars.ContainsKey("DoomPower"));
+    
     protected override IEnumerable<DynamicVar> StickerCanonicalVars =>
     [
-        new PowerVar<FocusedStickerPower>(2)
+        new PowerVar<DoomPower>(3)
     ];
 
     public override List<IHoverTip> ExtraHoverTips =>
     [
-        HoverTipFactory.FromPower<FocusPower>()
+        HoverTipFactory.FromPower<DoomPower>()
     ];
 
     public override async Task AfterCardPlayed(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
         if (cardPlay.Card != Owner) return;
 
-        await MyActions.ApplySelf<FocusedStickerPower>(choiceContext, this);
+        await MyActions.Apply<DoomPower>(choiceContext, this, CombatState!.HittableEnemies);
     }
 }

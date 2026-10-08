@@ -1,6 +1,6 @@
 using AjamaStickers.AjamaStickersCode.Extensions;
 using AjamaStickers.AjamaStickersCode.Stickers;
-using AjamaStickers.AjamaStickersCode.Stickers.Specific.Defect;
+using AjamaStickers.AjamaStickersCode.Stickers.SpecificVanilla.Defect;
 using BaseLib.Abstracts;
 using BaseLib.Extensions;
 using MegaCrit.Sts2.Core.Entities.Powers;
