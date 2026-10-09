@@ -1,3 +1,4 @@
+using AjamaStickers.AjamaStickersCode.ModInterop;
 using AjamaStickers.AjamaStickersCode.Utils;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
@@ -12,7 +13,8 @@ namespace AjamaStickers.AjamaStickersCode.Stickers.SpecificVanilla.Regent;
 public class Laugh() : BaseSticker
 {
     public override bool CanSpawn(Player player) =>
-        player.Character is MegaCrit.Sts2.Core.Models.Characters.Regent;
+        player.Character is MegaCrit.Sts2.Core.Models.Characters.Regent ||
+        (SpireverseMod.IsLoaded && player.Character.Id.Entry == SpireverseMod.Captain);
 
     protected override IEnumerable<DynamicVar> StickerCanonicalVars =>
     [
