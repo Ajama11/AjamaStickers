@@ -10,13 +10,11 @@ using MegaCrit.Sts2.Core.Models;
 
 namespace AjamaStickers.AjamaStickersCode.ModInterop;
 
-[ModInterop("IntoTheSpireverse")]
 public static class SpireverseMod
 {
-    [InteropIgnore]
-    public static bool IsLoaded { get; } = ModManager.GetLoadedMods().Any(mod => mod.manifest?.id == "IntoTheSpireverse");
-
-    [InteropIgnore]
+    public static bool IsLoaded { get; } = ModManager.GetLoadedMods()
+        .Any(mod => mod.manifest?.id == "IntoTheSpireverse");
+    
     private static Assembly? Assembly { get; } = (ModManager.GetLoadedMods()
         .FirstOrDefault(mod => mod.manifest?.id == "IntoTheSpireverse")?
         .assemblies.FirstOrDefault());
@@ -26,30 +24,13 @@ public static class SpireverseMod
     public const string Captain = "INTOTHESPIREVERSE-SHADOW_REGENT";
     
     private const string Keywords = "IntoTheSpireverse.IntoTheSpireverseCode.Keywords.IntoTheSpireverseKeywords";
-
-    // [InteropTarget("IntoTheSpireverse.IntoTheSpireverseCode.Keywords.IntoTheSpireverseKeywords")]
-    // public class Keywords : InteropClassWrapper
-    // {
-    //     public static CardKeyword Muddle;
-    //
-    //     public static async Task<IEnumerable<CardModel>> ApplyMuddleFromHandSelection(
-    //         PlayerChoiceContext choiceContext,
-    //         Player player,
-    //         AbstractModel source,
-    //         int count = 1)
-    //     {
-    //         return [];
-    //     }
-    // }
-
-    [InteropIgnore]
-    public static CardKeyword Muddle { [InteropIgnore] get; } = (CardKeyword)
+    
+    public static CardKeyword Muddle { get; } = (CardKeyword)
         (Assembly?.GetType(Keywords)?
              .GetField("Muddle")?
              .GetValue(null)
          ?? CardKeyword.None);
-
-    [InteropIgnore]
+    
     public static async Task<IEnumerable<CardModel>> MuddleFromHand(
         PlayerChoiceContext choiceContext,
         Player player,
