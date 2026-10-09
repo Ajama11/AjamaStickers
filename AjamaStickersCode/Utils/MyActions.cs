@@ -6,6 +6,7 @@ using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.Entities.Players;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
+using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Nodes.CommonUi;
 
@@ -67,5 +68,46 @@ public class MyActions
         return await PowerCmd.Apply<T>(choiceContext,
             sticker.Player.Creature, sticker.DynamicVars.Power<T>().BaseValue,
             sticker.Player.Creature, sticker.Card);
+    }
+    
+    public static async Task Apply(PlayerChoiceContext choiceContext, ModelId modelId, BaseSticker sticker, IEnumerable<Creature> targets)
+    {
+        PowerModel? power = ModelDb.GetByIdOrNull<PowerModel>(modelId);
+        if (power == null) return;
+
+        foreach (var target in targets)
+        {
+            await PowerCmd.Apply(choiceContext, power.ToMutable(),
+                target, sticker.DynamicVars[modelId.Entry].BaseValue, 
+                sticker.Player.Creature, sticker.Card);
+        }
+    }
+    
+    public static async Task<PowerModel?> Apply(PlayerChoiceContext choiceContext, ModelId modelId, BaseSticker sticker, Creature target)
+    {
+        PowerModel? power = ModelDb.GetByIdOrNull<PowerModel>(modelId);
+        if (power == null) return null;
+
+        power = power.ToMutable();
+
+        await PowerCmd.Apply(choiceContext, power,
+            target, sticker.DynamicVars[modelId.Entry].BaseValue, 
+            sticker.Player.Creature, sticker.Card);
+
+        return power;
+    }
+
+    public static async Task<PowerModel?> ApplySelf(PlayerChoiceContext choiceContext, ModelId modelId, BaseSticker sticker)
+    {
+        PowerModel? power = ModelDb.GetByIdOrNull<PowerModel>(modelId);
+        if (power == null) return null;
+
+        power = power.ToMutable();
+
+        await PowerCmd.Apply(choiceContext, power,
+            sticker.Player.Creature, sticker.DynamicVars[modelId.Entry].BaseValue,
+            sticker.Player.Creature, sticker.Card);
+
+        return power;
     }
 }

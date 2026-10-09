@@ -128,7 +128,7 @@ namespace $NAMESPACE$;
 public class $CLASS$() : BaseSticker {
     public override bool CanSpawn(Player player) =&gt;
         SpireverseMod.IsLoaded &amp;&amp;
-        player.Character.Id.Entry == SpireverseMod.Acolyte;
+        player.Character.Id.Entry == SpireverseMod;
     
     public override bool ExtraConditionalToApply(CardModel card) =&gt;
         SpireverseMod.IsLoaded;

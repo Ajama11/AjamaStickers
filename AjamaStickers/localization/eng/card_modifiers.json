@@ -145,9 +145,15 @@
   "AJAMASTICKERS-MITOSIS.description": "At the end of your turn, if this card is in your [gold]Hand[/gold], add a copy of it into your [gold]Draw Pile[/gold].",
   "AJAMASTICKERS-MITOSIS.afterCard": "[aqua]At the end of your turn, if this is in your [/aqua][gold]Hand[/gold][aqua], add a copy into your [/aqua][gold]Draw Pile[/gold][aqua].[/aqua]",
   "AJAMASTICKERS-STONE.title": "Stone",
-  "AJAMASTICKERS-STONE.description": "#After playing this card, [gold]Transform[/gold] up to [blue]!C! card(s)[/blue] into [gold]Deep Rock[/gold].",
+  "AJAMASTICKERS-STONE.description": "#After playing this card, [gold]Transform[/gold] up to [blue]!C![/blue] card(s) into [gold]Deep Rock[/gold].",
   "AJAMASTICKERS-STONE.afterCard": "#[gold]Transform[/gold][aqua] up to !C! card(s) into [/aqua][gold]Deep Rock[/gold][aqua].[/aqua]",
   "AJAMASTICKERS-SNECKO.title": "Snecko",
   "AJAMASTICKERS-SNECKO.description": "After this card is played, [gold]Muddle[/gold] a card in your [gold]Hand[/gold].",
-  "AJAMASTICKERS-SNECKO.afterCard": "[gold]Muddle[/gold][aqua] a card in your [/aqua][gold]Hand[/gold][aqua].[/aqua]"
+  "AJAMASTICKERS-SNECKO.afterCard": "[gold]Muddle[/gold][aqua] a card in your [/aqua][gold]Hand[/gold][aqua].[/aqua]",
+  "AJAMASTICKERS-VITAL.title": "Vital",
+  "AJAMASTICKERS-VITAL.description": "#After this card is played, gain [blue]!INTOTHESPIREVERSE-STONE_HEALTH_POWER![/blue] [gold]Stone Health[/gold].",
+  "AJAMASTICKERS-VITAL.afterCard": "#[aqua]Gain !INTOTHESPIREVERSE-STONE_HEALTH_POWER! [/aqua][gold]Stone Health[/gold][aqua].[/aqua]",
+  "AJAMASTICKERS-PAYBACK.title": "Payback",
+  "AJAMASTICKERS-PAYBACK.description": "#After this card is played, gain [blue]!INTOTHESPIREVERSE-RETALIATION_POWER![/blue] [gold]Retaliation[/gold].",
+  "AJAMASTICKERS-PAYBACK.afterCard": "#[aqua]Gain !INTOTHESPIREVERSE-RETALIATION_POWER! [/aqua][gold]Retaliation[/gold][aqua].[/aqua]"
 }
