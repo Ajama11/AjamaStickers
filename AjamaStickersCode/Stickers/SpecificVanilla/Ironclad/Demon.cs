@@ -1,3 +1,4 @@
+using AjamaStickers.AjamaStickersCode.ModInterop;
 using AjamaStickers.AjamaStickersCode.Utils;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
@@ -13,7 +14,8 @@ namespace AjamaStickers.AjamaStickersCode.Stickers.SpecificVanilla.Ironclad;
 public class Demon() : BaseSticker
 {
     public override bool CanSpawn(Player player) =>
-        player.Character is MegaCrit.Sts2.Core.Models.Characters.Ironclad;
+        player.Character is MegaCrit.Sts2.Core.Models.Characters.Ironclad ||
+        (SpireverseMod.IsLoaded && player.Character.Id.Entry == SpireverseMod.Tectonic);
 
     protected override IEnumerable<DynamicVar> StickerCanonicalVars =>
     [

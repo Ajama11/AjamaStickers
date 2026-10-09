@@ -143,5 +143,11 @@
   "AJAMASTICKERS-SETUP.afterCard": "[aqua]Put the highest cost card in your [/aqua][gold]Draw Pile[/gold][aqua] into your [/aqua][gold]Hand[/gold][aqua]. It gains [/aqua][gold]Retain[/gold][aqua] this turn.[/aqua]",
   "AJAMASTICKERS-MITOSIS.title": "Mitosis",
   "AJAMASTICKERS-MITOSIS.description": "At the end of your turn, if this card is in your [gold]Hand[/gold], add a copy of it into your [gold]Draw Pile[/gold].",
-  "AJAMASTICKERS-MITOSIS.afterCard": "[aqua]At the end of your turn, if this is in your [/aqua][gold]Hand[/gold][aqua], add a copy into your [/aqua][gold]Draw Pile[/gold][aqua].[/aqua]"
+  "AJAMASTICKERS-MITOSIS.afterCard": "[aqua]At the end of your turn, if this is in your [/aqua][gold]Hand[/gold][aqua], add a copy into your [/aqua][gold]Draw Pile[/gold][aqua].[/aqua]",
+  "AJAMASTICKERS-STONE.title": "Stone",
+  "AJAMASTICKERS-STONE.description": "#After playing this card, [gold]Transform[/gold] up to [blue]!C! card(s)[/blue] into [gold]Deep Rock[/gold].",
+  "AJAMASTICKERS-STONE.afterCard": "#[gold]Transform[/gold][aqua] up to !C! card(s) into [/aqua][gold]Deep Rock[/gold][aqua].[/aqua]",
+  "AJAMASTICKERS-SNECKO.title": "Snecko",
+  "AJAMASTICKERS-SNECKO.description": "After this card is played, [gold]Muddle[/gold] a card in your [gold]Hand[/gold].",
+  "AJAMASTICKERS-SNECKO.afterCard": "[gold]Muddle[/gold][aqua] a card in your [/aqua][gold]Hand[/gold][aqua].[/aqua]"
 }
