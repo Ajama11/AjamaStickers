@@ -161,5 +161,14 @@
   "AJAMASTICKERS-UIKA.afterCard": "[gold]{IsUpgraded:Upgraded |}Compose[/gold][aqua].[/aqua]",
   "AJAMASTICKERS-UMIRI.title": "Umiri",
   "AJAMASTICKERS-UMIRI.description": "After this card is played, put {Cards:plural:a|[blue]{}[/blue]} random [gold]Perform[/gold] {Cards:plural:card|cards} from your [gold]Draw Pile[/gold] into your [gold]Hand[/gold].",
-  "AJAMASTICKERS-UMIRI.afterCard": "[aqua]Put {Cards:plural:a|{}} random [/aqua][gold]Perform[/gold][aqua] {Cards:plural:card|cards} from your [/aqua][gold]Draw Pile[/gold][aqua] into your [/aqua][gold]Hand[/gold][aqua].[/aqua]"
+  "AJAMASTICKERS-UMIRI.afterCard": "[aqua]Put {Cards:plural:a|{}} random [/aqua][gold]Perform[/gold][aqua] {Cards:plural:card|cards} from your [/aqua][gold]Draw Pile[/gold][aqua] into your [/aqua][gold]Hand[/gold][aqua].[/aqua]",
+  "AJAMASTICKERS-MUTSUMI.title": "Mutsumi",
+  "AJAMASTICKERS-MUTSUMI.description": "#After playing this card, add [blue]!C![/blue] [gold]Weave(s)[/gold] into your [gold]Hand[/gold].",
+  "AJAMASTICKERS-MUTSUMI.afterCard": "#[aqua]Add !C! [/aqua][gold]Weave(s)[/gold][aqua] into your [/aqua][gold]Hand[/gold][aqua].[/aqua]",
+  "AJAMASTICKERS-SAKIKO.title": "Sakiko",
+  "AJAMASTICKERS-SAKIKO.description": "#After this card is played, gain [blue]!AVEMUJICA-OBLIVION![/blue] [gold]Oblivion[/gold].",
+  "AJAMASTICKERS-SAKIKO.afterCard": "#[aqua]Gain !AVEMUJICA-OBLIVION! [/aqua][gold]Oblivion[/gold][aqua].[/aqua]",
+  "AJAMASTICKERS-NYAMU.title": "Nyamu",
+  "AJAMASTICKERS-NYAMU.description": "#After this card is played, [gold]Enchant[/gold] a random card in your [gold]Hand[/gold] with [gold]Masterful[/gold] [blue]!Enchant![/blue].",
+  "AJAMASTICKERS-NYAMU.afterCard": "#[gold]Enchant[/gold][aqua] a random card in your [/aqua][gold]Hand[/gold][aqua] with [/aqua][gold]Masterful[/gold][aqua] !Enchant!.[/aqua]"
 }

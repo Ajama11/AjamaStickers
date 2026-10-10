@@ -111,7 +111,8 @@ public class $CLASS$ : AjamaStickerPower
 	<s:Boolean x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=39E483C9F8AE7640A1CF3293D9E7E5F1/Scope/=E8F0594528C33E45BBFEC6CFE851095D/@KeyIndexDefined">True</s:Boolean>
 	<s:String x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=39E483C9F8AE7640A1CF3293D9E7E5F1/Scope/=E8F0594528C33E45BBFEC6CFE851095D/Type/@EntryValue">InCSharpProjectFile</s:String>
 	<s:Boolean x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=39E483C9F8AE7640A1CF3293D9E7E5F1/ShortenQualifiedReferences/@EntryValue">True</s:Boolean>
-	<s:String x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=39E483C9F8AE7640A1CF3293D9E7E5F1/Text/@EntryValue">using AjamaStickers.AjamaStickersCode.ModInterop;
+	<s:String x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=39E483C9F8AE7640A1CF3293D9E7E5F1/Text/@EntryValue">using AjamaStickers.AjamaStickersCode.Extensions;
+using AjamaStickers.AjamaStickersCode.ModInterop;
 using AjamaStickers.AjamaStickersCode.Utils;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;

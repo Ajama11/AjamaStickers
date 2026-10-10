@@ -3,6 +3,7 @@ using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Players;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Modding;
+using MegaCrit.Sts2.Core.Models;
 
 namespace AjamaStickers.AjamaStickersCode.ModInterop;
 
@@ -46,5 +47,16 @@ public static class AveMujicaMod
         var task = (Task) method.Invoke(null, [owner, choiceContext, isUpgraded])!;
 
         await task;
+    }
+
+    public static void TryEnchantCardWithMasterful(CardModel card, int amount)
+    {
+        if (Assembly == null) return;
+
+        var method = Assembly.GetType("AveMujica.AveMujicaCode.Enchantments.Masterful")?
+            .GetMethod("TryEnchantCardWithMasterful");
+        if (method == null) return;
+
+        method.Invoke(null, [card, amount]);
     }
 }
