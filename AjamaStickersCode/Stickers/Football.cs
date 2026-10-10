@@ -24,15 +24,10 @@ public class Football() : BaseSticker
     {
         if (card != Owner) return cardLocation;
         if (Owner.CombatState == null) return cardLocation;
-
-        List<Creature> teammates = Owner.CombatState.PlayerCreatures
-            .Where(c => c.IsAlive && c != Owner.Owner.Creature)
-            .ToList();
-        if (teammates.Count == 0) return cardLocation;
+        if (Allies.Count == 0) return cardLocation;
 
         CardLocation newLocation = cardLocation;
-
-        newLocation.player = Owner.RunState!.Rng.CombatTargets.NextItem(teammates)!.Player!;
+        newLocation.player = Rng.CombatTargets.NextItem(Allies)!.Player!;
 
         if (newLocation.pileType == PileType.Discard)
         {

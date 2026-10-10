@@ -26,7 +26,7 @@ public class HighFive() : BaseSticker
 
         List<CardModel> randomCards = (Player.PlayerCombatState!.DrawPile.Cards
                 .Where(c => c.HasAnySticker()))
-            .TakeRandom(DynamicVars.Cards.IntValue, Player.RunState.Rng.CombatCardSelection)
+            .TakeRandom(DynamicVars.Cards.IntValue, Rng.CombatCardSelection)
             .ToList();
 
         foreach (var card in randomCards)

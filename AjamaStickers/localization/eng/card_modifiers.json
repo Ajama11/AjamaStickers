@@ -155,5 +155,11 @@
   "AJAMASTICKERS-VITAL.afterCard": "#[aqua]Gain !INTOTHESPIREVERSE-STONE_HEALTH_POWER! [/aqua][gold]Stone Health[/gold][aqua].[/aqua]",
   "AJAMASTICKERS-PAYBACK.title": "Payback",
   "AJAMASTICKERS-PAYBACK.description": "#After this card is played, gain [blue]!INTOTHESPIREVERSE-RETALIATION_POWER![/blue] [gold]Retaliation[/gold].",
-  "AJAMASTICKERS-PAYBACK.afterCard": "#[aqua]Gain !INTOTHESPIREVERSE-RETALIATION_POWER! [/aqua][gold]Retaliation[/gold][aqua].[/aqua]"
+  "AJAMASTICKERS-PAYBACK.afterCard": "#[aqua]Gain !INTOTHESPIREVERSE-RETALIATION_POWER! [/aqua][gold]Retaliation[/gold][aqua].[/aqua]",
+  "AJAMASTICKERS-UIKA.title": "Uika",
+  "AJAMASTICKERS-UIKA.description": "After this card is played, [gold]Compose[/gold].\nIf this card is upgraded, [gold]Upgraded Compose[/gold] instead.",
+  "AJAMASTICKERS-UIKA.afterCard": "[gold]{IsUpgraded:Upgraded |}Compose[/gold][aqua].[/aqua]",
+  "AJAMASTICKERS-UMIRI.title": "Umiri",
+  "AJAMASTICKERS-UMIRI.description": "After this card is played, put {Cards:plural:a|[blue]{}[/blue]} random [gold]Perform[/gold] {Cards:plural:card|cards} from your [gold]Draw Pile[/gold] into your [gold]Hand[/gold].",
+  "AJAMASTICKERS-UMIRI.afterCard": "[aqua]Put {Cards:plural:a|{}} random [/aqua][gold]Perform[/gold][aqua] {Cards:plural:card|cards} from your [/aqua][gold]Draw Pile[/gold][aqua] into your [/aqua][gold]Hand[/gold][aqua].[/aqua]"
 }

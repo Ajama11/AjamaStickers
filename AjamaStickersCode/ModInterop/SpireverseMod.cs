@@ -41,7 +41,6 @@ public static class SpireverseMod
 
         var method = Assembly.GetType(Keywords)?
             .GetMethod("ApplyMuddleFromHandSelection");
-        
         if (method == null) return [];
 
         var task = (Task<IEnumerable<CardModel>>) method.Invoke(null, [choiceContext, player, source, count])!;

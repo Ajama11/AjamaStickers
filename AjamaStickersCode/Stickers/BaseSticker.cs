@@ -77,8 +77,9 @@ public abstract class BaseSticker : CardModifier, ICustomModel
     public List<Player> OtherPlayers =>
         Owner?.Owner.RunState.Players.Where(p => p != Owner.Owner).ToList()!;
     public List<Creature> Allies =>
-        Owner?.CombatState?.PlayerCreatures.Where(c => c != Owner.Owner.Creature).ToList()!;
+        Owner?.CombatState?.PlayerCreatures.Where(c => c.IsAlive && c != Owner.Owner.Creature).ToList()!;
     public ICombatState? CombatState => Owner?.CombatState;
+    public RunRngSet Rng => Player.RunState.Rng;
 
     public LocString TitleLocString => GetLoc("title");
     public string Title => TitleLocString.GetFormattedText();
@@ -184,6 +185,8 @@ public abstract class BaseSticker : CardModifier, ICustomModel
     public override LocString GetLoc(string subKey = "description")
     {
         LocString loc = base.GetLoc(subKey);
+        
+        if (Owner == null) return loc;
         
         loc.Add("InCombat", InCombat);
         loc.Add("IsMultiplayer", IsMultiplayer);
