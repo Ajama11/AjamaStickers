@@ -10,7 +10,10 @@ namespace AjamaStickers.AjamaStickersCode.Stickers.SpecificVanilla.Necrobinder;
 public class Bone() : BaseSticker
 {
     public override bool CanSpawn(Player player) =>
-        DraftRequirement(player, c => c.DynamicVars.ContainsKey(SummonVar.defaultName));
+        DraftRequirement(player, c =>
+            c.DynamicVars.ContainsKey(SummonVar.defaultName) &&
+            c.VisualCardPool.Id.Entry != "THEKINSTS2-KIN_CARD_POOL");
+            // WHY DOES THE KIN USE SUMMONVAR
     
     protected override IEnumerable<DynamicVar> StickerCanonicalVars =>
     [

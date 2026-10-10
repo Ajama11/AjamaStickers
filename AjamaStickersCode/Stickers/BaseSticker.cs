@@ -108,7 +108,7 @@ public abstract class BaseSticker : CardModifier, ICustomModel
     }
 
     private static readonly Dictionary<Type, List<CharacterModel>> _draftRequirements = [];
-    public bool DraftRequirement(Player player, Func<CardModel, bool> shouldCharacterCount)
+    public bool DraftRequirement(Player player, Func<CardModel, bool> shouldCharacterCount, int minimum = 1)
     {
         Type callingSticker = GetType();
         
@@ -118,8 +118,16 @@ public abstract class BaseSticker : CardModifier, ICustomModel
             
             foreach (var character in ModelDb.AllCharacters)
             {
-                if (character.CardPool.AllCards.Any(shouldCharacterCount))
-                    _draftRequirements[callingSticker].Add(character);
+                if (minimum == 1)
+                {
+                    if (character.CardPool.AllCards.Any(shouldCharacterCount))
+                        _draftRequirements[callingSticker].Add(character);
+                }
+                else
+                {
+                    if (character.CardPool.AllCards.Count(shouldCharacterCount) >= minimum)
+                        _draftRequirements[callingSticker].Add(character);
+                }
             }
             
             MainFile.Logger.Warn($"{Title} can spawn for only {_draftRequirements[callingSticker].AsReadable(", ")}");

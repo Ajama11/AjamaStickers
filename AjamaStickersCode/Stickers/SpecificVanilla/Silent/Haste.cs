@@ -10,7 +10,7 @@ namespace AjamaStickers.AjamaStickersCode.Stickers.SpecificVanilla.Silent;
 public class Haste() : BaseSticker
 {
     public override bool CanSpawn(Player player) =>
-        DraftRequirement(player, c => c.Keywords.Contains(CardKeyword.Sly));
+        DraftRequirement(player, c => c.Keywords.Contains(CardKeyword.Sly), 3);
 
     protected override IEnumerable<DynamicVar> StickerCanonicalVars =>
     [

@@ -9,7 +9,7 @@ namespace AjamaStickers.AjamaStickersCode.Stickers.SpecificVanilla.Silent;
 public class Virus() : BaseSticker
 {
     public override bool CanSpawn(Player player) =>
-        DraftRequirement(player, c => c.DynamicVars.ContainsKey("PoisonPower"));
+        DraftRequirement(player, c => c.DynamicVars.ContainsKey("PoisonPower"), 3);
 
     public override List<IHoverTip> ExtraHoverTips =>
     [
