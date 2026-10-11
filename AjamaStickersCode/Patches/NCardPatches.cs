@@ -32,7 +32,8 @@ public static class NCardPatches
     [HarmonyPostfix]
     public static void UpdateVisualsPostfix(NCard __instance)
     {
-        TextureRect? nSticker = __instance.Body.GetNodeOrNull<TextureRect>("AjamaSticker");
+        // ReSharper disable once ConditionalAccessQualifierIsNonNullableAccordingToAPIContract
+        TextureRect? nSticker = __instance.Body?.GetNodeOrNull<TextureRect>("AjamaSticker");
         
         if (nSticker == null || __instance.Model == null || !__instance.Model.HasAnySticker())
         {
