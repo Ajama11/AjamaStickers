@@ -1,4 +1,5 @@
 using System.Reflection;
+using AjamaStickers.AjamaStickersCode.Utils;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Players;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
@@ -9,52 +10,37 @@ namespace AjamaStickers.AjamaStickersCode.ModInterop;
 
 public static class AveMujicaMod
 {
-    public static bool IsLoaded { get; } = ModManager.GetLoadedMods()
-        .Any(mod => mod.manifest?.id == "AveMujica");
-    
-    private static Assembly? Assembly { get; } = (ModManager.GetLoadedMods()
-        .FirstOrDefault(mod => mod.manifest?.id == "AveMujica")?
-        .assemblies.FirstOrDefault());
+    public static bool IsLoaded { get; } = Interop.IsLoaded("AveMujica");
+    private static Assembly? Assembly { get; } = Interop.GetAssembly("AveMujica");
     
     public const string Oblivionis = "AVEMUJICA-AVE_MUJICA";
     
     private const string Keywords = "AveMujica.AveMujicaCode.Cards.AveMujicaKeywords";
     
-    public static CardKeyword Compose { get; } = (CardKeyword)
-        (Assembly?.GetType(Keywords)?
-             .GetField("Compose")?
-             .GetValue(null)
-         ?? CardKeyword.None);
+    public static CardKeyword Compose { get; } =
+        Interop.GetKeyword(Assembly, Keywords, "Compose");
     
-    public static CardKeyword Perform { get; } = (CardKeyword)
-        (Assembly?.GetType(Keywords)?
-             .GetField("Perform")?
-             .GetValue(null)
-         ?? CardKeyword.None);
+    public static CardKeyword Perform { get; } =
+        Interop.GetKeyword(Assembly, Keywords, "Perform");
 
     public static Type AbstractPerformCard { get; } =
-        Assembly?.GetType("AveMujica.AveMujicaCode.Cards.AbstractPerformCard")
-        ?? typeof(int);
+        Interop.GetType(Assembly, "AveMujica.AveMujicaCode.Cards.AbstractPerformCard");
 
     public static async Task RandomCompose(Player owner, PlayerChoiceContext choiceContext, bool isUpgraded)
     {
-        if (Assembly == null) return;
-
-        var method = Assembly.GetType("AveMujica.AveMujicaCode.Cards.CardMods.ComposeHelper")?
-            .GetMethod("RandomCompose");
+        var method = Interop.GetMethod(Assembly,
+            "AveMujica.AveMujicaCode.Cards.CardMods.ComposeHelper",
+            "RandomCompose");
         if (method == null) return;
-
-        var task = (Task) method.Invoke(null, [owner, choiceContext, isUpgraded])!;
-
-        await task;
+        
+        await (Task) method.Invoke(null, [owner, choiceContext, isUpgraded])!;
     }
 
     public static void TryEnchantCardWithMasterful(CardModel card, int amount)
     {
-        if (Assembly == null) return;
-
-        var method = Assembly.GetType("AveMujica.AveMujicaCode.Enchantments.Masterful")?
-            .GetMethod("TryEnchantCardWithMasterful");
+        var method = Interop.GetMethod(Assembly,
+            "AveMujica.AveMujicaCode.Enchantments.Masterful",
+            "TryEnchantCardWithMasterful");
         if (method == null) return;
 
         method.Invoke(null, [card, amount]);
