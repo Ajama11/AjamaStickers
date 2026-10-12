@@ -1,5 +1,6 @@
 using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
+using AjamaStickers.AjamaStickersCode.Extensions;
 using AjamaStickers.AjamaStickersCode.Rewards;
 using AjamaStickers.AjamaStickersCode.Stickers;
 using BaseLib.Abstracts;
@@ -104,12 +105,39 @@ public static class StickerSingletons
                 int roll = player.RunState.Rng.CombatOrbGeneration.NextInt(100);
 
                 bool isAfterTreasureRow = player.RunState.ActFloor > player.RunState.Map.GetRowCount() - 7;
+
+                int numberOfStickeredCards = player.Deck.Cards.Count(c => c.HasAnySticker());
                 
                 if (isAfterTreasureRow)
                     roll += 7;
                 
                 if (combat.RoomType == RoomType.Elite)
                     roll += isAfterTreasureRow ? 10 : 25; // Early Elites get a larger bonus than Late Elites, to incentivize sometimes taking an Early Elite
+
+                // Catch-up Bonuses
+                switch (player.RunState.CurrentActIndex + 1)
+                {
+                    case 1:
+                        if (isAfterTreasureRow && numberOfStickeredCards < 3)
+                            roll += 10;
+                        break;
+                    case 2:
+                        if (isAfterTreasureRow && numberOfStickeredCards < 7)
+                            roll += 12;
+                        break;
+                    default:
+                        if (!isAfterTreasureRow)
+                        {
+                            if (numberOfStickeredCards < 10)
+                                roll += 12;
+                        }
+                        else
+                        {
+                            if (numberOfStickeredCards < 13)
+                                roll += 20;
+                        }
+                        break;
+                }
 
                 if (roll >= (100 - Chance[player]))
                 {
