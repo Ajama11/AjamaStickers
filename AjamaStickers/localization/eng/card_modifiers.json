@@ -170,5 +170,8 @@
   "AJAMASTICKERS-SAKIKO.afterCard": "#[aqua]Gain !AVEMUJICA-OBLIVION! [/aqua][gold]Oblivion[/gold][aqua].[/aqua]",
   "AJAMASTICKERS-NYAMU.title": "Nyamu",
   "AJAMASTICKERS-NYAMU.description": "#After this card is played, [gold]Enchant[/gold] a random card in your [gold]Hand[/gold] with [gold]Masterful[/gold] [blue]!Enchant![/blue].",
-  "AJAMASTICKERS-NYAMU.afterCard": "#[gold]Enchant[/gold][aqua] a random card in your [/aqua][gold]Hand[/gold][aqua] with [/aqua][gold]Masterful[/gold][aqua] !Enchant!.[/aqua]"
+  "AJAMASTICKERS-NYAMU.afterCard": "#[gold]Enchant[/gold][aqua] a random card in your [/aqua][gold]Hand[/gold][aqua] with [/aqua][gold]Masterful[/gold][aqua] !Enchant!.[/aqua]",
+  "AJAMASTICKERS-GEM.title": "Gem",
+  "AJAMASTICKERS-GEM.description": "#After this card is played, a random card in your [gold]Draw Pile[/gold] without [gold]Replay[/gold] gains [gold]Replay[/gold] [blue]!Replay![/blue].",
+  "AJAMASTICKERS-GEM.afterCard": "#[aqua]A random card in your [/aqua][gold]Draw Pile[/gold][aqua] without [/aqua][gold]Replay[/gold][aqua] gains [/aqua][gold]Replay[/gold][aqua] !Replay!.[/aqua]"
 }
