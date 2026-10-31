@@ -17,8 +17,7 @@ public class Hope() : BaseSticker
     public override bool CanSpawn(Player player) => IsMultiplayer;
 
     public override bool ExtraConditionalToApply(CardModel card) =>
-        card.Tags.Contains(CardTag.Defend) &&
-        card.DynamicVars.TryGetValue("Block", out _ );
+        card.GainsBlock;
 
     public override async Task AfterBlockGained(Creature creature, decimal amount, ValueProp props, CardModel? cardSource)
     {
