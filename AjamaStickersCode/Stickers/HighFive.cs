@@ -23,9 +23,20 @@ public class HighFive() : BaseSticker
     public override async Task AfterCardPlayed(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
         if (cardPlay.Card != Owner) return;
+        
+        List<CardModel> eligibleCards = Player.PlayerCombatState!.DrawPile.Cards
+            .Where(c => c.HasAnySticker() &&
+                !c.Keywords.Contains(CardKeyword.Unplayable))
+            .ToList();
 
-        List<CardModel> randomCards = (Player.PlayerCombatState!.DrawPile.Cards
-                .Where(c => c.HasAnySticker()))
+        if (eligibleCards.Count == 0)
+        {
+            eligibleCards = Player.PlayerCombatState!.DrawPile.Cards
+                .Where(c => c.HasAnySticker())
+                .ToList();
+        }
+        
+        List<CardModel> randomCards = eligibleCards
             .TakeRandom(DynamicVars.Cards.IntValue, Rng.CombatCardSelection)
             .ToList();
 
