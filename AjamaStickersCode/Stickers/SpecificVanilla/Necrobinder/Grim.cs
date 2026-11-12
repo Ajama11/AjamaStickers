@@ -18,8 +18,8 @@ public class Grim() : BaseSticker
         !card.Keywords.Contains(CardKeyword.Exhaust) &&
         card.Type != CardType.Power &&
         card is not TheBall;
-
-    public override async Task AfterDeath(PlayerChoiceContext choiceContext, Creature creature, bool wasRemovalPrevented, float deathAnimLength)
+    
+    public override async Task AfterDeath(PlayerChoiceContext choiceContext, Creature creature, CardModel? source, bool wasRemovalPrevented, float deathAnimLength)
     {
         if (creature.Side != CombatSide.Enemy) return;
 
