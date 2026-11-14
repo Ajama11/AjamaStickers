@@ -21,7 +21,7 @@ public static class Interop
             .Any(mod => mod.manifest?.id == modId);
     }
 
-    public static Assembly? GetAssembly(string modId, string? subModIdentifier = null)
+    public static Assembly? GetAssembly(string modId, string? subModIdentifier = null, bool makeErrorSoundIfNotFound = false)
     {
         var assemblies = ModManager.GetLoadedMods()
             .FirstOrDefault(mod => mod.manifest?.id == modId)?
@@ -29,7 +29,8 @@ public static class Interop
 
         if (assemblies == null)
         {
-            ReportNotFound("Assembly", "assemblies", modId);
+            if (makeErrorSoundIfNotFound)
+                ReportNotFound("Assembly", "assemblies", modId);
             return null;
         }
         
@@ -46,7 +47,9 @@ public static class Interop
     
     public static MethodInfo? GetMethod(Assembly? assembly, string location, string name)
     {
-        var method = assembly?.GetType(location)?.GetMethod(name);
+        if (assembly == null) return null;
+        
+        var method = assembly.GetType(location)?.GetMethod(name);
         
         if (method != null) return method;
         
@@ -56,7 +59,9 @@ public static class Interop
 
     public static object? GetField(Assembly? assembly, string location, string name, object? instance = null, string errorMsgName = "Field")
     {
-        var field = assembly?
+        if (assembly == null) return null;
+        
+        var field = assembly
             .GetType(location)?
             .GetField(name)?
             .GetValue(instance);
@@ -69,7 +74,9 @@ public static class Interop
     
     public static object? GetProperty(Assembly? assembly, string location, string name, object? instance = null, string errorMsgName = "Property")
     {
-        var property = assembly?
+        if (assembly == null) return null;
+        
+        var property = assembly
             .GetType(location)?
             .GetProperty(name)?
             .GetValue(instance);
@@ -82,6 +89,8 @@ public static class Interop
 
     public static CardKeyword GetKeyword(Assembly? assembly, string location, string name)
     {
+        if (assembly == null) return CardKeyword.None;
+        
         var keyword = GetField(assembly, location, name, errorMsgName: "Keyword");
         
         if (keyword != null) return (CardKeyword) keyword;
@@ -91,7 +100,9 @@ public static class Interop
 
     public static Type GetType(Assembly? assembly, string location, string name)
     {
-        var type = assembly?.GetType($"{location}.{name}");
+        if (assembly == null) return typeof(int);
+        
+        var type = assembly.GetType($"{location}.{name}");
 
         if (type != null) return type;
         
@@ -101,7 +112,9 @@ public static class Interop
     
     public static Type GetType(Assembly? assembly, string locationAndName)
     {
-        var type = assembly?.GetType(locationAndName);
+        if (assembly == null) return typeof(int);
+        
+        var type = assembly.GetType(locationAndName);
 
         if (type != null) return type;
 
