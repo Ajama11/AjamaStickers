@@ -29,41 +29,43 @@ public static class StickerSingletons
     
     [SuppressMessage("ReSharper", "RedundantAlwaysMatchSubpattern")]
     [SuppressMessage("ReSharper", "ConditionalAccessQualifierIsNonNullableAccordingToAPIContract")]
-    public static void SetRandomPlacement(CardModel card)
+    public static void SetRandomPlacement(CardModel card, Player? starterDeckPlayerOverride = null)
     {
         if (RandomPlacement[card] != -1) return;
         
         // There are so many non-nullable things here that CAN be null that I forget which ones are truly not null ever
         
+        var player = starterDeckPlayerOverride ?? card.Owner;
+        
         CardModel? cardInDeckIfPossible = null;
 
-        if (card.Owner is { Deck: { Cards: not null } })
+        if (player is { Deck: { Cards: not null } })
         {
-            cardInDeckIfPossible = card.Owner.Deck.Cards
+            cardInDeckIfPossible = player.Deck.Cards
                 .ToList()
                 .Find(c => c == card);
         }
         
-        int titleAsNumber = card.Title
+        int titleAsNumber = card.GetType().FullName!
             .ToCharArray()
             .Aggregate(0, (current, character) => current + character);
         
         int positionInDeck = cardInDeckIfPossible == null ?
             42069 :
-            card.Owner.Deck.Cards!.FirstIndex(c => c == card);
+            player.Deck.Cards!.FirstIndex(c => c == card);
 
-        int netId = card.Owner?.NetId == null ?
+        int netId = player?.NetId == null ?
             420 :
-            (int) card.Owner.NetId;
+            (int) player.NetId;
         
         int floorAddedToDeck = card.FloorAddedToDeck ?? 6969;
         
         int currentFloor = card.RunState?.TotalFloor ?? 0;
-            
-        int seed = card.Owner?.RunState.Rng.Seed == null ?
+        
+        int seed = player?.RunState.Rng.Seed == null ?
             69420 :
-            (int) card.Owner.RunState.Rng.Seed;
-
+            (int) player.RunState.Rng.Seed;
+        
         RandomPlacement[card] = Math.Abs(
             (titleAsNumber * (positionInDeck + netId)) +
             (floorAddedToDeck * currentFloor) +

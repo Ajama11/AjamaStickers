@@ -16,7 +16,7 @@ public static class PopulateDeckPatch
     {
         foreach (var card in __instance.Deck.Cards)
         {
-            StickerSingletons.SetRandomPlacement(card);
+            StickerSingletons.SetRandomPlacement(card, starterDeckPlayerOverride: __instance);
         }
     }
 }
