@@ -14,6 +14,7 @@ using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Rewards;
 using MegaCrit.Sts2.Core.Rooms;
+using MegaCrit.Sts2.Core.Runs;
 
 namespace AjamaStickers.AjamaStickersCode.Singletons;
 
@@ -98,7 +99,7 @@ public static class StickerSingletons
             if (room is not CombatRoom combat) return false;
             if (rewards.Count == 0) return false;
 
-            if (combat.RoomType == RoomType.Boss)
+            if (combat.RoomType == RoomType.Boss || player.RunState.GameMode == GameMode.Blitz)
             {
                 rewards.Add(new StickerReward(player));
             }
