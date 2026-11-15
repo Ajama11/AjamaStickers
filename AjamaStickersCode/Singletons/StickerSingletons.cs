@@ -47,7 +47,7 @@ public static class StickerSingletons
                 .Find(c => c == card);
         }
         
-        int titleAsNumber = card.GetType().FullName!
+        int titleAsNumber = card.Id.Entry
             .ToCharArray()
             .Aggregate(0, (current, character) => current + character);
         
