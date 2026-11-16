@@ -7,6 +7,7 @@ using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models;
+using MegaCrit.Sts2.Core.Runs;
 
 namespace AjamaStickers.AjamaStickersCode.Stickers;
 
@@ -14,6 +15,9 @@ public class Coin() : BaseSticker
 {
     public override bool RequiresCardToBePlayable => false;
     public override bool HideNewLineOverride => InCombat;
+
+    public override bool CanSpawn(Player player) =>
+        player.RunState.GameMode != GameMode.Blitz;
 
     public override bool ExtraConditionalToApply(CardModel card) =>
         !card.Keywords.Contains(CardKeyword.Eternal);

@@ -9,6 +9,7 @@ using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models;
+using MegaCrit.Sts2.Core.Runs;
 
 namespace AjamaStickers.AjamaStickersCode.Stickers;
 
@@ -18,7 +19,8 @@ public class Merchant() : BaseSticker
     public override bool HideNewLineOverride => InCombat;
 
     public override bool CanSpawn(Player player) =>
-        MerchantStickerSingleton.GetTotalMerchantStickers(player) < 10;
+        MerchantStickerSingleton.GetTotalMerchantStickers(player) < 10 &&
+        player.RunState.GameMode != GameMode.Blitz;
 
     public bool IsReward { get; set; }
 

@@ -103,8 +103,10 @@ public abstract class BaseSticker : CardModifier, ICustomModel
     public bool CanApplyStickerInternal(CardModel card)
     {
         bool possiblyPlayable = true;
-        if (RequiresCardToBePlayable) possiblyPlayable = !card.Keywords.Contains(CardKeyword.Unplayable);
-        return possiblyPlayable && ExtraConditionalToApply(card);
+        if (RequiresCardToBePlayable)
+            possiblyPlayable = !card.Keywords.Contains(CardKeyword.Unplayable);
+        
+        return card.Rarity != CardRarity.Quest && possiblyPlayable && ExtraConditionalToApply(card);
     }
 
     private static readonly Dictionary<Type, List<CharacterModel>> _draftRequirements = [];
