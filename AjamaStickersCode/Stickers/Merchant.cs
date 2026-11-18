@@ -19,7 +19,7 @@ public class Merchant() : BaseSticker
     public override bool HideNewLineOverride => InCombat;
 
     public override bool CanSpawn(Player player) =>
-        MerchantStickerSingleton.GetTotalMerchantStickers(player) < 10 &&
+        MerchantStickerSingleton.GetTotalMerchantStickers() < 10 &&
         player.RunState.GameMode != GameMode.Blitz;
 
     public bool IsReward { get; set; }
@@ -32,7 +32,7 @@ public class Merchant() : BaseSticker
                 merchant.IsReward ? 1 : 0;
 
             int numberOfStickers =
-                MerchantStickerSingleton.GetTotalMerchantStickers(merchant.Owner!.Owner)
+                MerchantStickerSingleton.GetTotalMerchantStickers()
                 + bonusIfStickerIsBeingOfferedInReward;
 
             return Math.Min((numberOfStickers * 5), 50).ToString();
